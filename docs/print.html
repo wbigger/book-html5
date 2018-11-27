@@ -1,0 +1,698 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>TPSI - HTML5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Materiale di supporto alle lezioni.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">TPSI - HTML5</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#sviluppo-html5" id="sviluppo-html5"><h1>Sviluppo HTML5</h1></a>
+<p><strong>A.S. 2018-2019</strong></p>
+<p><strong>Istituto di Istruzione Superiore G. Marconi</strong></p>
+<p><strong>TPSI</strong></p>
+<p>Benvenuti ragazzi!</p>
+<p>Questo materiale riepiloga quanto detto a lezione negli scorsi giorni.</p>
+<p>Le risposte alle domande dei compiti in classe sono tutte incluse in questo materiale.</p>
+<p>I riferimenti al libro di testo sono tra parentesi quadre, come ad esempio [pag. 1].</p>
+<blockquote>
+<p>Il testo in questi box sono per approfondimento. La lettura di questo materiale non è strettamente
+necessaria per le verifiche, ma è consigliata per vostra cultura personale e in quanto
+sapere indispensabile per chi vuole diventare un informatico.</p>
+</blockquote>
+<p>Buon studio e buon lavoro.</p>
+<a class="header" href="#html--css" id="html--css"><h1>HTML &amp; CSS</h1></a>
+<p>Il World Wide Web è nato nel 1989 sotto la guida del londinese <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Burners-Lee</a>: una rete di pagine di testo collegate tra di loro. La sintassi utilizzata per scrivere queste pagine è l'HTML, che trova una sua prima definizione standard nel 1991.</p>
+<p>Nel 2014 Tim Burners-Lee fonda il <a href="https://www.w3.org/">w3consortium</a> (w3c) con lo scopo di standardizzare le nuove tecnologie emergenti per il World Wide Web. Gli standard per HTML continuano fino al 2001, quando differenti opinioni si scontrano: da una parte w3c propendeva per lo standard XHTML, dall'altra un gruppo di persone ed aziende stava proponendo uno standard chiamato HTML5 e formato da 3 elementi: HTML+CSS+JS. La diatriba si concluderà nel 2014 con la pubblicazione dello standard HTML5 da parte del w3c.</p>
+<a class="header" href="#html5-htmlcssjs" id="html5-htmlcssjs"><h2>HTML5: HTML+CSS+JS</h2></a>
+<p>Lo standard HTML5 si basa su tre tecnologie fondamentali:</p>
+<ul>
+<li>le pagine <strong>html</strong>, che definiscono la <strong>struttura</strong> della pagina</li>
+<li>i fogli di stile <strong>css</strong>, che definiscono come la pagina deve essere visualizzata</li>
+<li>i file <strong>js</strong>, ovvero JavaScript, che definiscono il comportamento dinamico del sito</li>
+</ul>
+<p>Per ora concentriamoci sui primi due: HTML e CSS. Di seguito i punti su cui consiglio di prestare maggiore attenzione, con i relativi link su w3school o altri siti di riferimento.</p>
+<a class="header" href="#html" id="html"><h3>HTML</h3></a>
+<p>Importanti:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_blocks.asp">elementi block e inline</a></li>
+<li><a href="https://www.w3schools.com/html/html_layout.asp">layout</a></li>
+<li><a href="https://www.w3schools.com/html/html_lists.asp">liste</a></li>
+<li><a href="https://www.w3schools.com/html/html_css.asp">come collegare i fogli di stile</a></li>
+</ul>
+<p>Approfondimenti:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_responsive.asp">responsive web design</a></li>
+</ul>
+<a class="header" href="#css" id="css"><h3>CSS</h3></a>
+<p>Importanti:</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css_syntax.asp">sintassi e selettori CSS</a></li>
+<li><a href="https://www.w3schools.com/css/css_boxmodel.asp">box model</a></li>
+</ul>
+<p>Approfondimenti:</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css_inline-block.asp">layout inline-block</a></li>
+<li><a href="https://www.w3schools.com/css/css_display_visibility.asp">proprietà display e visibilità</a></li>
+<li><a href="https://www.w3schools.com/css/css3_flexbox.asp">flexbox</a></li>
+<li><a href="https://css-tricks.com/tag/responsive-tables/">responsive tables</a> (vari articoli, fatevi una cultura)</li>
+<li><a href="https://www.w3schools.com/css/css3_transitions.asp">transition basics</a></li>
+<li><a href="https://cssanimation.rocks/transition-vs-animation/">transitions vs animations</a></li>
+</ul>
+<p>Link interessanti:</p>
+<ul>
+<li><a href="http://csszengarden.com">csszengarden</a>: esempi di come può cambiare la stessa pagina HTML con differenti CSS</li>
+<li><a href="https://www.uplabs.com/">uplabs</a>: sito dove potete trovare molti esempi di layout</li>
+</ul>
+<a class="header" href="#html-1" id="html-1"><h1>HTML</h1></a>
+<p>Immaginiamo che il reparto di design ci abbia consegnato questo visual da realizzare:</p>
+<p align="center">
+<img title="visual" src="assets/list-cut.png">
+</p>
+<p>Inoltre ci ha fornito inoltre gli artefatti grafici qui di seguito:</p>
+<p><img src="assets/clockblack.png">
+<img src="assets/locationsmall.png">
+<img src="assets/avatar1.png"  width="32px">
+<img src="assets/avatar2.png"  width="32px">
+<img src="assets/avatar3.png"  width="32px">
+<img src="assets/checkblue.png"></p>
+<p>In un contesto reale il reparto design potrebbe (auspicabile, ma non è detto) averci fornito anche le distanze in pixel o percentuale tra i vari elementi, ma in questo caso li deduciamo direttamente dal visual.</p>
+<p>È fortemente consigliato di provare prima ad implementare da soli l'HTML e il CSS, e poi vedere l'implementazione proposta qui. Non c'è una implementazione giusta o sbagliata in assoluto, l'importante è che rispetti il visual e sia quanto più possibile &quot;pulita&quot; e facile da rendere responsive. Nota: per salvare gli artefatti grafici, cliccate con il tasto destro e premere salva.</p>
+<p>Quando avete finito o se volete vedere subito la soluzione...cominciamo!</p>
+<a class="header" href="#layout" id="layout"><h2>Layout</h2></a>
+<p>Possiamo implementare questa lista in vari modi. Ad esempio:</p>
+<ul>
+<li>con i tag <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>: in questo caso definiamo le varie righe come elementi di una lista</li>
+<li>con i tag <code>&lt;table&gt;</code>: da evitare, perché sarebbe difficile da gestire in maniera responsive</li>
+<li>con le proprietà CSS <code>display: table-*</code>: usiamo solo il tag <code>div</code> nell'HTML e definiamo il layout nel CSS.</li>
+</ul>
+<p>Proviamo la terza strada, perché molto usata e ci permette di impratichirci sia con l'HTML che con il CSS.</p>
+<p>Dobbiamo quindi dividere il visual in vari elementi, in accordo con le proprietà <code>display:table-*</code>. Per riferimento guardate <a href="https://www.w3schools.com/cssref/pr_class_display.asp">qui</a>.</p>
+<p align="center">
+<img title="visual" src="assets/list-cut-layout/list-cut-layout.001.png">
+</p>
+<p>Ora scriviamo l'HTML e agganciamo le classi che andremo a definire nel foglio di stile.</p>
+<a class="header" href="#html-2" id="html-2"><h2>HTML</h2></a>
+<p>Per prima cosa definiamo il <code>&lt;div&gt;</code> per l'intera tabella:</p>
+<pre><code class="language-html">&lt;div class=&quot;table&quot;&gt;
+ &lt;!-- la tabella qui --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Notare che il nome <code>table</code> assegnato alla classe è a nostra discrezione. Ci serve per poter in seguito agganciare il CSS.</p>
+<p>Aggiungiamo due righe della tabella, la prima per l'intestazione e la seconda per la prima riga del corpo. Le altre righe del corpo sono del tutto identiche, basterà fare copia-incolla.</p>
+<pre><code class="language-html">&lt;div class=&quot;table&quot;&gt;
+  &lt;div class=&quot;tablerow&quot;&gt;
+      &lt;!-- mettere intestazione tabella qui --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;tablerow&quot;&gt;
+      &lt;!-- mettere prima riga del corpo tabella qui --&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+<p>Riempiamo ora la riga di intestazione:</p>
+<pre><code class="language-html">&lt;div class=&quot;table&quot;&gt;
+  &lt;div class=&quot;tablerow&quot;&gt;
+      &lt;div class=&quot;tablehead&quot;&gt;WHEN &amp; WHAT&lt;/div&gt;
+      &lt;div class=&quot;tablehead&quot;&gt;WHERE&lt;/div&gt;
+      &lt;div class=&quot;tablehead&quot;&gt;OWNER&lt;/div&gt;
+      &lt;div class=&quot;tablehead&quot;&gt;ME&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;tablerow&quot;&gt;
+      &lt;!-- mettere corpo tabella qui --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Anche qui <code>tablehead</code> è un nome che abbiamo scelto noi. Notare che abbiamo definito una classe specifica per le celle dell'header perché avranno uno stile diverso rispetto a quelle del corpo.</p>
+<p>Ora aggiungiamo le quattro celle per la riga del corpo della tabella. Per ora le creaimo vuote:</p>
+<pre><code class="language-html">&lt;div class=&quot;table&quot;&gt;
+    &lt;div class=&quot;tablerow&quot;&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;WHEN &amp; WHAT&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;WHERE&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;OWNER&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;ME&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tablerow&quot;&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;
+            &lt;!-- mettere contenuto cella --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;
+            &lt;!-- mettere contenuto cella --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;
+            &lt;!-- mettere contenuto cella --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;
+            &lt;!-- mettere contenuto cella --&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Ora dobbiamo riempire ognuna delle quattro celle, con il contenuto ed il layout corretto.</p>
+<p><a name="html-first-cell"></a></p>
+<p>Cominciamo con la prima cella, la dividiamo nei seguenti <code>&lt;div&gt;</code>, con le relative classi:</p>
+<p align="center">
+<img title="layout" src="assets/list-cut-layout/list-cut-layout.002.png">
+</p>
+<p>L'implementazione in HTML sarà la seguente:</p>
+<pre><code class="language-html">&lt;div class=&quot;date&quot;&gt;25&lt;br&gt;&lt;span class=&quot;month&quot;&gt;DEC&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;datename&quot;&gt;Christmas Dinner&lt;br&gt;
+    &lt;img src=&quot;img/clockblack.png&quot; class=&quot;iconclock&quot;&gt;
+    &lt;div class=&quot;hour&quot;&gt;8:30 pm&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Ragionando in maniera del tutto analoga anche per le altre celle, otteniamo il seguente codice HTML dell'intera riga:</p>
+<pre><code class="language-html">&lt;div class=&quot;table&quot;&gt;
+    &lt;div class=&quot;tablerow&quot;&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;WHEN &amp; WHAT&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;WHERE&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;OWNER&lt;/div&gt;
+        &lt;div class=&quot;tablehead&quot;&gt;ME&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tablerow&quot;&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;
+            &lt;div class=&quot;date&quot;&gt;25&lt;br&gt;&lt;span class=&quot;month&quot;&gt;DEC&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;datename&quot;&gt;Christmas Dinner&lt;br&gt;
+                &lt;img src=&quot;img/clockblack.png&quot; class=&quot;iconclock&quot;&gt;
+                &lt;div class=&quot;hour&quot;&gt;8:30 pm&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;&lt;img src=&quot;img/locationsmall.png&quot; class=&quot;iconlocation&quot;&gt;
+            &lt;div class=&quot;locationname&quot;&gt;Family House&lt;br&gt;&lt;span class=&quot;address&quot;&gt;24th Ave, New York&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;&lt;img src=&quot;img/avatar1.png&quot; class=&quot;avatar&quot;&gt;
+            &lt;div class=&quot;name&quot;&gt;Manuel Smith&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tablecell&quot;&gt;&lt;img src=&quot;img/checkblue.png&quot; class=&quot;iconcheck&quot;&gt;
+            &lt;div class=&quot;answer&quot;&gt;I AM GOING&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Questa pagina renderizzata (ovvero aperta in un browser) appare così:</p>
+<p align="center">
+<img title="html-only" src="assets/html-only.png">
+</p>
+<p>Bene, c'è tutto!</p>
+<p>Ma perché gli elementi vengono visualizzati tutti <strong>uno sotto l'altro</strong>? Questo dipende dal fatto che abbiamo usato i tag <code>&lt;div&gt;</code> che sono <strong>di tipo block</strong>, che per <a href="https://www.w3schools.com/html/html_blocks.asp">definizione</a> partono sempre da una nuova riga e occupano tutta la larghezza possibile. Per vedere gli ingombri &quot;dal vero&quot; possiamo aprire i developer tools di Firefox, Chrome o Safari e selezionare un elemento, per esaminare lo spazio occupato dal suo box.</p>
+<p>Ad esempio, in questa immagine abbiamo selezionato la cella &quot;WHERE&quot; con i developers tool di Firefox Quantum.</p>
+<p align="center">
+<img title="html-only-inspect" src="assets/html-only-inspect.png">
+</p>
+<p>Come facciamo ad ottenere il layout corretto? Useremo delle proprietà CSS che vedremo tra poco.</p>
+<a class="header" href="#css-1" id="css-1"><h1>CSS</h1></a>
+<p>Creiamo il nostro foglio di stile e lo chiamiamo <code>style.css</code>. Lo linkiamo alla pagina HTML inserendo all'interno del tag <code>&lt;head&gt;</code> questa riga:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+</code></pre>
+<blockquote>
+<p>In VSCode, digitando link:css, si avvia l'autocompletamento.</p>
+</blockquote>
+<blockquote>
+<p>In questo caso non avrebbe senso mettere lo stile inline perché dovremmo ripeterlo per ogni tag di riga e cella. Avremmo potuto mettere lo stile in testa alla pagina, ma <strong>è buona norma metterlo in un file separato</strong>, per poterlo gestire più facilmente.</p>
+</blockquote>
+<p>Apriamo il nostro foglio di stile e cominciamo a scaldarci. Per prima cosa, cambiamo il font di default a tutta la pagina, usando il selettore universale asterisco:</p>
+<pre><code class="language-css">* {
+    font-family: Arial, Helvetica, sans-serif
+}
+</code></pre>
+<blockquote>
+<p>In VSCode, digitando font-family, si avvia l'autocompletamento di tutta la riga, compresi i valori della proprietà.</p>
+</blockquote>
+<p>Aggiorniamo la pagina e vediamo se è cambiato qualcosa:</p>
+<p align="center">
+<img title="html-font" src="assets/css-font.png">
+</p>
+<p>Wow, il font è cambiato davvero :)</p>
+<p>Ora creiamo lo scheletro del nostro CSS in accordo con le classi che abbiamo definito nell'HTML:</p>
+<pre><code class="language-css">* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.table {
+
+}
+
+.tablerow {
+
+}
+
+.tablehead {
+
+}
+
+.date {
+
+}
+
+.hour {
+
+}
+
+.month {
+
+}
+
+.datename {
+
+}
+
+.locationname {
+
+}
+
+.avatar {
+
+}
+
+.iconclock {
+
+}
+
+.iconlocation {
+
+}
+
+.iconcheck {
+
+}
+
+.address {
+
+}
+
+.name {
+
+}
+
+.answer {
+
+}
+
+</code></pre>
+<p>Per prima cosa inseriamo le proprietà display, per creare la tabella:</p>
+<pre><code class="language-css">.table {
+    display: table;
+}
+
+.tablerow {
+    display: table-row;
+}
+
+.tablehead {
+    display: table-cell;
+}
+
+.tablecell {
+    display: table-cell;
+}
+</code></pre>
+<p>Che viene renderizzato così:</p>
+<p align="center">
+<img title="css-font" src="assets/css-display.png">
+</p>
+<p>OK, abbiamo una disposizione a tabella. Ora dobbiamo lavorare sulle singole classi per adattare lo stile.</p>
+<p>Per prima cosa lavoriamo sulla classe <code>.table</code>: vogliamo che occupi tutto lo spazio disponibile, quindi aggiungiamo la proprietà <code>width: 100%</code>.</p>
+<pre><code class="language-css">.table {
+    display: table;
+    width: 100%;
+}
+</code></pre>
+<p align="center">
+<img title="css-100%" src="assets/css-100.png">
+</p>
+<p>Ora lavoriamo sull'header. Vogliamo che:</p>
+<ul>
+<li>ci sia una linea continua sotto, di color grigio chiaro (<code>border-bottom</code>)</li>
+<li>il testo sia leggermente spostato in alto rispetto al bordo (<code>padding</code>)</li>
+<li>il carattere sia di 8 punti e grassetto (<code>font-size</code> e <code>font-weight</code>)</li>
+</ul>
+<p>Aggiungiamo le proprietà per queste modifiche:</p>
+<pre><code class="language-css">.tablehead {
+    display: table-cell;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 0 1% 0;
+    font-size: 8pt;
+    font-weight: bolder;
+}
+</code></pre>
+<p>Attenzione al campo padding: come per tutte le proprietà del box model, se si specificano quattro valori vengono interpretati come:</p>
+<p align="center">
+<img title="padding" src="assets/list-cut-layout/list-cut-layout.003.png">
+</p>
+<p>Ed ecco il risultato:</p>
+<p align="center">
+<img title="css-header" src="assets/css-header.png">
+</p>
+<p>Lavoriamo sulle celle del corpo della tabella. Vogliamo che tutte le celle di default abbiano le seguenti caratteristiche:</p>
+<ul>
+<li>un po' di padding in alto ed in basso</li>
+<li>il carattere di 8 punti e grassetto</li>
+<li>allineamento verticale in alto, invece del default in basso (<code>vertical-align</code>)</li>
+</ul>
+<pre><code class="language-css">.tablecell {
+    display: table-cell;
+    padding: 1% 0 1% 0;
+    font-size: 8pt;
+    font-weight: bold;
+    vertical-align: top;
+}
+</code></pre>
+<p align="center">
+<img title="css-cell" src="assets/css-cell.png">
+</p>
+<p>Ora lavoriamo sulla prima cella. Come abbiamo visto <a href="#html-first-cell">prima</a>, questa cella è divisa in due parti: la data a sinistra e i dettagli a destra.</p>
+<p>Per il <code>&lt;div&gt;</code> della data, dobbiamo fare le seguenti cose:</p>
+<ul>
+<li>il campo data deve essere un quadrato (<code>width</code> e <code>heigth</code>) con i bordi arrotondati (<code>border-radius</code>)</li>
+<li>lo sfondo blu (<code>background</code>) e cambiamo anche il colore del testo (<code>color</code>)</li>
+<li>il font di dimensione 12 punti e grassetto, centrato (<code>text-align</code>)</li>
+<li>un po' di padding in tutte e quattro le direzioni</li>
+<li>un po' di margine solo a destra (<code>margin-right</code>)</li>
+</ul>
+<pre><code class="language-css">.date {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background: #5c00ff;
+    color: #00fdff;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2%;
+    margin-right: 5%;
+}
+</code></pre>
+<p align="center">
+<img title="css-date" src="assets/css-date.png">
+</p>
+<p>Uhm...la data è OK ma il testo dovrebbe stare a destra, invece che sotto. Per risolvere questo problema possiamo usare la proprietà CSS <code>float</code>, che imposta il blocco in modo che deve <em>flottare</em> e non occupare tutta la larghezza disponibile nella pagina. Nel nostro caso il blocco <code>&lt;div&gt;</code>  deve <em>flottare a sinistra</em>, quindi usiamo la prorietà float con valore left:</p>
+<pre><code class="language-css">.date {
+    ...
+    float:left;
+}
+</code></pre>
+<p align="center">
+<img title="css-date" src="assets/css-float.png">
+</p>
+<p>Hooray! Prima di andare avanti però <strong>attenzione</strong>: la proprietà <code>float</code> ha un effetto che si propaga a tutti gli elementi che ha accanto ed in cui è contenuto, e questo può avere degli effetti indesiderati. È buona norma quindi interrompere la propagazione da qualche parte con la proprietà <code>clear:both</code>: noi la aggiungiamo alla classe <code>.tablecell</code>.</p>
+<pre><code class="language-css">.tablecell {
+    ...
+    clear: both;
+}
+</code></pre>
+<a class="header" href="#mettiamo-insieme-i-pezzi" id="mettiamo-insieme-i-pezzi"><h3>Mettiamo insieme i pezzi</h3></a>
+<p>A questo punto abbiamo tutti i pezzi che ci servono, ci rimane solo da aggiungere le proprietà giuste nel posto giusto. Il risutato finale è questo.</p>
+<pre><code class="language-css">* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.tablerow {
+    display: table-row;
+}
+
+.tablehead {
+    display: table-cell;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 0 1% 0;
+    font-size: 8pt;
+    font-weight: bolder;
+
+}
+
+.tablecell {
+    display: table-cell;
+    padding: 1% 0 1% 0;
+    font-size: 8pt;
+    font-weight: bold;
+    vertical-align: top;
+    clear: both;
+}
+
+.date {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background: #5c00ff;
+    color: #00fdff;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2%;
+    float: left;
+    margin-right: 5%;
+}
+
+.hour {
+    color: #161616;
+    font-size: 7pt;
+    margin: 5px 0 0 5px;
+    float: left;
+}
+.month {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.datename {
+    float: left;
+    margin-top: 12px;
+    color: #5c00ff;
+}
+
+.locationname {
+    font-size:7pt;
+    margin:13px 0 0 20px;
+}
+
+.avatar {
+    width:32px;
+    height:32px;
+    border-radius:100px;
+    float:left;
+    margin-top:10px;
+}
+
+.iconclock {
+    float: left;
+    margin-top: 2px;
+}
+
+.iconlocation {
+    float:left;
+    margin-top:13px;
+}
+
+.iconcheck {
+    float:left;
+    margin-top:18px;
+}
+
+.address {
+    font-size:6.5pt;
+    color:grey;
+}
+
+.name {
+    margin:22px 0 0 40px;
+    font-size:6.5pt;
+}
+
+.answer {
+    color: #5c00ff;
+    margin:20px 0 0 22px;
+}
+</code></pre>
+<p>Che ci porta a questo risultato:</p>
+<p align="center">
+<img title="css-complete" src="assets/css-complete.png">
+</p>
+<p>Era proprio quello che volevamo :D</p>
+<p>Adesso avete tutte le basi che vi servono per realizzare le vostre pagine. Buon lavoro.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
