@@ -19,23 +19,22 @@ Importanti:
 - [liste](https://www.w3schools.com/html/html_lists.asp)
 - [come collegare i fogli di stile](https://www.w3schools.com/html/html_css.asp)
 
-Approfondimenti:
-- [responsive web design](https://www.w3schools.com/html/html_responsive.asp)
+> Approfondimenti:
+> - [responsive web design](https://www.w3schools.com/html/html_responsive.asp)
 
 ### CSS
 Importanti:
 - [sintassi e selettori CSS](https://www.w3schools.com/css/css_syntax.asp)
 - [box model](https://www.w3schools.com/css/css_boxmodel.asp)
 
-Approfondimenti:
-- [layout inline-block](https://www.w3schools.com/css/css_inline-block.asp)
-- [proprietà display e visibilità](https://www.w3schools.com/css/css_display_visibility.asp)
-- [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
-- [responsive tables](https://css-tricks.com/tag/responsive-tables/) (vari articoli, fatevi una cultura)
-- [transition basics](https://www.w3schools.com/css/css3_transitions.asp)
-- [transitions vs animations](https://cssanimation.rocks/transition-vs-animation/)
+> Approfondimenti:
+> - [layout inline-block](https://www.w3schools.com/css/css_inline-block.asp)
+> - [proprietà display e visibilità](https://www.w3schools.com/css/css_display_visibility.asp)
+> - [flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+> - [responsive tables](https://css-tricks.com/tag/responsive-tables/) (vari articoli, fatevi una cultura)
+> - [transition basics](https://www.w3schools.com/css/css3_transitions.asp)
+> - [transitions vs animations](https://cssanimation.rocks/transition-vs-animation/)
 
-
-Link interessanti:
-- [csszengarden](http://csszengarden.com): esempi di come può cambiare la stessa pagina HTML con differenti CSS
-- [uplabs](https://www.uplabs.com/): sito dove potete trovare molti esempi di layout
+> Altri link interessanti:
+> - [csszengarden](http://csszengarden.com): esempi di come può cambiare la stessa pagina HTML con differenti CSS
+> - [uplabs](https://www.uplabs.com/): sito dove potete trovare molti esempi di layout
