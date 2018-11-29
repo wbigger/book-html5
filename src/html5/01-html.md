@@ -177,3 +177,4 @@ Ad esempio, in questa immagine abbiamo selezionato la cella "WHERE" con i develo
 </p>
 
 Come facciamo ad ottenere il layout corretto? Useremo delle proprietà CSS che vedremo tra poco.
+[qui](https://jsfiddle.net/Savinss/mpunwj7z/1/)
