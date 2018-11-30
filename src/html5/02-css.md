@@ -351,4 +351,4 @@ Adesso avete tutte le basi che vi servono per realizzare le vostre pagine. Buon 
 
 Qui potrete trovare trovare il nostro foglio di stile completo di HTML e CSS
 
-[QUI](https://jsfiddle.net/Savinss/5epkq0a3/3/)
+[QUI](https://jsfiddle.net/Savinss/5epkq0a3/4/)
