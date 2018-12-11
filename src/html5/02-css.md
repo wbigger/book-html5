@@ -348,3 +348,5 @@ Che ci porta a questo risultato:
 Era proprio quello che volevamo :D
 
 Adesso avete tutte le basi che vi servono per realizzare le vostre pagine. Buon lavoro.
+
+[Qui](https://jsfiddle.net/Savinss/5epkq0a3/4/) potrete trovare la versione live della nostra pagina, completa di HTML e CSS.
