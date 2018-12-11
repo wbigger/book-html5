@@ -2,7 +2,7 @@
 
 Il World Wide Web è nato nel 1989 sotto la guida del londinese [Tim Burners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee): una rete di pagine di testo collegate tra di loro. La sintassi utilizzata per scrivere queste pagine è l'HTML, che trova una sua prima definizione standard nel 1991.
 
-Nel 2014 Tim Burners-Lee fonda il [w3consortium](https://www.w3.org/) (w3c) con lo scopo di standardizzare le nuove tecnologie emergenti per il World Wide Web. Gli standard per HTML continuano fino al 2001, quando differenti opinioni si scontrano: da una parte w3c propendeva per lo standard XHTML, dall'altra un gruppo di persone ed aziende stava proponendo uno standard chiamato HTML5 e formato da 3 elementi: HTML+CSS+JS. La diatriba si concluderà nel 2014 con la pubblicazione dello standard HTML5 da parte del w3c.
+Nel 1994 Tim Burners-Lee fonda il [w3consortium](https://www.w3.org/) (w3c) con lo scopo di standardizzare le nuove tecnologie emergenti per il World Wide Web. Gli standard per HTML continuano fino al 2001, quando differenti opinioni si scontrano: da una parte w3c propendeva per lo standard XHTML, dall'altra un gruppo di persone ed aziende stava proponendo uno standard chiamato HTML5 e formato da 3 elementi: HTML+CSS+JS. La diatriba si concluderà nel 2014 con la pubblicazione dello standard HTML5 da parte del w3c.
 
 ## HTML5: HTML+CSS+JS
 Lo standard HTML5 si basa su tre tecnologie fondamentali:
