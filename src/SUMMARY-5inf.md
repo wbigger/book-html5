@@ -6,4 +6,4 @@
   - [CSS](./html5/02-css.md)
 - [Deploy](./deploy/README.md)
   - [On-Premises](./deploy/onprem.md)
-  - [On-Premises](./deploy/cloud.md)
+  - [Cloud](./deploy/cloud.md)

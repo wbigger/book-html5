@@ -1,4 +1,5 @@
 # On-Premises
+Aprire AWS Educate.
 Lanciare un'istanza su AWS. Accedere via terminale.
 ```
 sudo yum update
