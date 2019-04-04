@@ -5,5 +5,6 @@
   - [HTML](./html5/01-html.md)
   - [CSS](./html5/02-css.md)
 - [Deploy](./deploy/README.md)
+  - [Local](./deploy/local.md)
   - [On-Premises](./deploy/onprem.md)
   - [Cloud](./deploy/cloud.md)

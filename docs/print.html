@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/onprem.html"><strong aria-hidden="true">3.1.</strong> On-Premises</a></li><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.2.</strong> Cloud</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/local.html"><strong aria-hidden="true">3.1.</strong> Local</a></li><li><a href="deploy/onprem.html"><strong aria-hidden="true">3.2.</strong> On-Premises</a></li><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.3.</strong> Cloud</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -652,25 +652,67 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 <p>Adesso avete tutte le basi che vi servono per realizzare le vostre pagine. Buon lavoro.</p>
 <p><a href="https://jsfiddle.net/Savinss/5epkq0a3/4/">Qui</a> potrete trovare la versione live della nostra pagina, completa di HTML e CSS.</p>
 <a class="header" href="#deploy" id="deploy"><h1>Deploy</h1></a>
+<p>In questo capitolo vedremo i vari modi per testare e distribuire il vostro software. Per dettagli vedi <a href="https://en.wikipedia.org/wiki/Deployment_environment">questa pagina</a> di Wikipedia.</p>
+<blockquote>
+<p>In questo capitolo tradurremo la parola inglese &quot;deploy&quot; con &quot;dislocazione&quot;.</p>
+</blockquote>
+<a class="header" href="#local" id="local"><h1>Local</h1></a>
+<p>Deploy e test sul proprio computer...work in progress.</p>
 <a class="header" href="#on-premises" id="on-premises"><h1>On-Premises</h1></a>
-<a class="header" href="#on-premises-1" id="on-premises-1"><h1>On-Premises</h1></a>
-<p>Aprire AWS Educate.
+<a class="header" href="#cloud-computing" id="cloud-computing"><h1>Cloud computing</h1></a>
+<p>Un'azienda invece di dislocare le proprie risorse e servizi su una macchina all'interno dei locali dell'azienda stessa, può scegliere di dislocarli su macchine non di sua proprietà posizionate da qualche parte nel mondo in dei locali insieme ad altre decine, centinaia o migliaia di macchine che servono anche altre aziende. Questi locali vengono chiamate <em>server-farm</em> o <em>data center</em>. Per farvi un'idea, potete guardare <a href="https://www.youtube.com/watch?v=XZmGGAbHqa0">il tour virtuale</a> dei data center di Google.</p>
+<p>Negli ultimi anni, c'è stato un forte trend nello spostamento dei servizi da un'infrastuttura on-premises verso il cloud. Questo per diversi motivi:</p>
+<ul>
+<li>non dover gestire una infrastruttura interna, con relativo personale</li>
+<li>possibilità di pagare solo i servizi usati, senza costi iniziali</li>
+<li>rischi di perdita dati o interruzione di servizio molto bassi</li>
+<li>maggiore sicurezza dagli attacchi informatici</li>
+</ul>
+<p>Tutto questo è reso possibile anche dalla diffusione capillare della fibra ottica in molte città del mondo.</p>
+<p>Alcuni svantaggi invece sono legati all privacy: i dati sono fisicamente ospitati su qualche server remoto, con minor controllo sull'accesso ai dati da terze parti. Alcune leggi europee limitano l'utilizzo del cloud per alcune categorie di enti pubblici e privati, per esempio richiedendo che i data center siano risiedano sul territorio della comunità europea (in altre parole, non si possono usare data center in USA o Cina).</p>
+<blockquote>
+<p>Anche per uso personale il cloud ormai è estremamente diffuso: pensate ad esempio a Dropbox, Google Drive, Google Docs, la web mail e servizi analoghi. Sono tutte applicazioni che conservano e gestiscono file ed informazioni in cloud.</p>
+</blockquote>
+<a class="header" href="#emissioni-e-sostenibilità" id="emissioni-e-sostenibilità"><h2>Emissioni e sostenibilità</h2></a>
+<p>Con l'aumentare dell'uso del cloud, i data center sono aumentati di numero e di dimensioni, e la loro gestione è diventata un problema anche dal punto di vista ambientale. Alcune <a href="https://www.nature.com/articles/d41586-018-06610-y">stime di Nature</a> prevedono che nel 2030 le attività legate al networking ed Internet arriveranno al 20% del consumo dotale di energia elettrica, con i data center con la percentuale maggiore.</p>
+<a class="header" href="#gestori-cloud" id="gestori-cloud"><h2>Gestori Cloud</h2></a>
+<p>Il panorama dei gestori Cloud, come si può immaginare, è molto variegato e dinamico. Esistono comunque alcune grandi aziende che in questo momento gestiscono la maggior parte degli utenti:</p>
+<ul>
+<li><a href="http://aws.amazon.com/">Amazon Web Service</a></li>
+<li><a href="https://cloud.google.com/">Google Cloud Platform</a></li>
+<li><a href="https://azure.microsoft.com/">Microsoft Azure Platform</a></li>
+<li><a href="https://us.alibabacloud.com/">Alibaba Cloud</a></li>
+</ul>
+<p>In Italia abbiamo <a href="https://www.cloud.it/">Aruba Cloud</a>, che fornisce servizi con particolare attenzione al rispetto delle normative europee.</p>
+<a class="header" href="#amazon-web-services" id="amazon-web-services"><h2>Amazon Web Services</h2></a>
+<p>Noi utilizzeremo i servizi di Amazon Web Services (abbreviato: AWS), perché è uno dei gestori più utlizzati e grazie da una convenzione, abbiamo del credito gratuito per gli studenti della nostra scuola.</p>
+<p>Per cominciare, chiedete al docente di invitarvi ad AWS Educate, e seguite le indicazioni che vi arrivano via email.</p>
+<p>Una volta completata la registrazione. Aprire AWS Educate.
 Lanciare un'istanza su AWS. Accedere via terminale.</p>
-<pre><code>sudo yum update
+<pre><code>sudo yum update -y
 
 sudo yum install docker -y
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $USER # logout per avere effetto
 sudo systemctl start docker
 sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
 
 sudo yum install git -y
-git clone https://github.com/marconicivitavecchia/my-project.git
 </code></pre>
-<p>Uscire con ctrl-D e rientrare</p>
-<pre><code>cd my-project
+<p>Uscire con ctrl-D e rientrare per fare in modo che tutte le modifiche abbiano effetto.</p>
+<p>A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
+<pre><code># Siamo sull'istanza remota
+git clone &lt;URL-del-vostro-repository-su-github&gt;
+cd &lt;cartella-del-progetto-appena-scaricata&gt;
 docker-compose up
 </code></pre>
-<p>Fatto!!!</p>
+<p>Fatto!</p>
+<p>Riferimenti:</p>
+<ul>
+<li><a href="https://hackernoon.com/running-docker-on-aws-ec2-83a14b780c56">Docker</a></li>
+<li><a href="https://docs.docker.com/compose/install/">Docker compose</a></li>
+</ul>
 
                     </main>
 
