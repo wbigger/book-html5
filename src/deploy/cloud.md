@@ -30,6 +30,11 @@ Noi utilizzeremo i servizi di Amazon Web Services (abbreviato: AWS), perché è 
 
 Per cominciare, chiedete al docente di invitarvi ad AWS Educate, e seguite le indicazioni che vi arrivano via email.
 
+Nel form di registrazione mettete i seguenti dati:
+- Institute: Marconi Civitavecchia
+- Level: Graduate
+- Graduation Date: il mese (nel futuro) in cui prevedete di diplomarvi
+
 Una volta completata la registrazione. Aprire AWS Educate.
 Lanciare un'istanza su AWS. Accedere via terminale.
 ```
