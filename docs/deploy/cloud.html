@@ -152,6 +152,9 @@
 </blockquote>
 <a class="header" href="#emissioni-e-sostenibilità" id="emissioni-e-sostenibilità"><h2>Emissioni e sostenibilità</h2></a>
 <p>Con l'aumentare dell'uso del cloud, i data center sono aumentati di numero e di dimensioni, e la loro gestione è diventata un problema anche dal punto di vista ambientale. Alcune <a href="https://www.nature.com/articles/d41586-018-06610-y">stime di Nature</a> prevedono che nel 2030 le attività legate al networking ed Internet arriveranno al 20% del consumo dotale di energia elettrica, con i data center con la percentuale maggiore.</p>
+<blockquote>
+<p>Una parte significativa del traffico è generato da video virali, magari di pochi secondi o minuti. Pensate anche all'ambiente quando condividete sui social!</p>
+</blockquote>
 <a class="header" href="#gestori-cloud" id="gestori-cloud"><h2>Gestori Cloud</h2></a>
 <p>Il panorama dei gestori Cloud, come si può immaginare, è molto variegato e dinamico. Esistono comunque alcune grandi aziende che in questo momento gestiscono la maggior parte degli utenti:</p>
 <ul>
@@ -170,8 +173,14 @@
 <li>Level: Graduate</li>
 <li>Graduation Date: il mese (nel futuro) in cui prevedete di diplomarvi</li>
 </ul>
-<p>Una volta completata la registrazione. Aprire AWS Educate.
-Lanciare un'istanza su AWS. Accedere via terminale.</p>
+<p>Una volta completata la registrazione, aprire AWS Educate e fare il login.
+Nella pagina che compare selezionare &quot;Go to Classroom&quot; e selezionare la propria classe.</p>
+<p>Ad un certo punto si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate su AWS Console.</p>
+<p>A questo punto vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito <em>non</em> funzionerà.</p>
+<p>Dalla lista dei servizi in alto, selezionare EC2. Nella pagina che si apre, selezionare il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.</p>
+<p>Generate una nuova chiave privata quando richiesto. <strong>ATTENZIONE!</strong> mettete la chiave privata in un luogo sicuro, per esempio inviatevela per posta o copiatela su una chiavetta. Se perdete il file, non potrete più accedere alla vostra istanza; se qualcuno entra in possesso del file, potrà entrare e modificare la vostra istanza cloud.</p>
+<p>Una volta lanciata l'istanza, andate nella lista delle istanze, premete su &quot;Connect&quot;, lasciate il default &quot;A standalone SSH client&quot;. Come SSH Client, Amazon (e anche io) per Windows consiglia <a href="https://git-scm.com/downloads">Git Bash</a>. PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!</p>
+<p>Dal terminale sulla macchina remota, lanciate i seguenti comandi.</p>
 <pre><code>sudo yum update -y
 
 sudo yum install docker -y
@@ -190,12 +199,27 @@ git clone &lt;URL-del-vostro-repository-su-github&gt;
 cd &lt;cartella-del-progetto-appena-scaricata&gt;
 docker-compose up
 </code></pre>
-<p>Fatto!</p>
+<p>Fatto, la macchina è configurata!</p>
+<p>Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: aprire la porta http.</p>
+<blockquote>
 <p>Riferimenti:</p>
 <ul>
 <li><a href="https://hackernoon.com/running-docker-on-aws-ec2-83a14b780c56">Docker</a></li>
 <li><a href="https://docs.docker.com/compose/install/">Docker compose</a></li>
 </ul>
+</blockquote>
+<a class="header" href="#gruppi-di-sicurezza" id="gruppi-di-sicurezza"><h2>Gruppi di sicurezza</h2></a>
+<p>Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP.</p>
+<p>Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna &quot;Security Group&quot; e selezionare il link &quot;launch-wizard-1&quot;. Nella finestra che si apre cliccare sul bottone &quot;Actions&quot;-&gt;&quot;Edit inbound rules&quot; e quindi &quot;Add rule&quot;. Selezionare come tipo &quot;HTTP&quot; e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.</p>
+<a class="header" href="#accesso-allistanza-dal-browser" id="accesso-allistanza-dal-browser"><h2>Accesso all'istanza dal browser</h2></a>
+<p>Ora siamo pronti per accedere all'istanza. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il &quot;Public DNS&quot; e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:</p>
+<pre><code>ec2-18-215-229-80.compute-1.amazonaws.com:8080
+</code></pre>
+<p>Se tutto va bene, vedrete la vostra pagina in cloud. Complimenti!</p>
+<a class="header" href="#fermare-listanza" id="fermare-listanza"><h2>Fermare l'istanza</h2></a>
+<p>Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è <em>running</em>, state consumando credito, indipendentemente dagli accessi.</p>
+<p>Per fermare l'istanza, andate sulla lista delle istanze, selezionate &quot;Actions&quot;, quindi su &quot;States&quot; selezionate &quot;Stop&quot; se volete fermarla e prevedete di riutilizzarla in seguito, o &quot;Terminate&quot; se volete completamente eliminarla.</p>
+<p>Precisazione: in generale, anche quando una istanza è <em>stopped</em>, continuate a consumare de credito per lo <em>storage</em> che state utilizzando. Ma nel nostro caso la quantità di storage utilizzata è minima e quindi anche questa componente del costo.</p>
 
                     </main>
 

@@ -16,6 +16,9 @@ Alcuni svantaggi invece sono legati all privacy: i dati sono fisicamente ospitat
 ## Emissioni e sostenibilità
 Con l'aumentare dell'uso del cloud, i data center sono aumentati di numero e di dimensioni, e la loro gestione è diventata un problema anche dal punto di vista ambientale. Alcune [stime di Nature](https://www.nature.com/articles/d41586-018-06610-y) prevedono che nel 2030 le attività legate al networking ed Internet arriveranno al 20% del consumo dotale di energia elettrica, con i data center con la percentuale maggiore.
 
+> Una parte significativa del traffico è generato da video virali, magari di pochi secondi o minuti. Pensate anche all'ambiente quando condividete sui social!
+
+
 ## Gestori Cloud
 Il panorama dei gestori Cloud, come si può immaginare, è molto variegato e dinamico. Esistono comunque alcune grandi aziende che in questo momento gestiscono la maggior parte degli utenti:
 - [Amazon Web Service](http://aws.amazon.com/)
@@ -35,8 +38,20 @@ Nel form di registrazione mettete i seguenti dati:
 - Level: Graduate
 - Graduation Date: il mese (nel futuro) in cui prevedete di diplomarvi
 
-Una volta completata la registrazione. Aprire AWS Educate.
-Lanciare un'istanza su AWS. Accedere via terminale.
+Una volta completata la registrazione, aprire AWS Educate e fare il login.
+Nella pagina che compare selezionare "Go to Classroom" e selezionare la propria classe.
+
+Ad un certo punto si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate su AWS Console.
+
+A questo punto vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito _non_ funzionerà.
+
+Dalla lista dei servizi in alto, selezionare EC2. Nella pagina che si apre, selezionare il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.
+
+Generate una nuova chiave privata quando richiesto. **ATTENZIONE!** mettete la chiave privata in un luogo sicuro, per esempio inviatevela per posta o copiatela su una chiavetta. Se perdete il file, non potrete più accedere alla vostra istanza; se qualcuno entra in possesso del file, potrà entrare e modificare la vostra istanza cloud.
+
+Una volta lanciata l'istanza, andate nella lista delle istanze, premete su "Connect", lasciate il default "A standalone SSH client". Come SSH Client, Amazon (e anche io) per Windows consiglia [Git Bash](https://git-scm.com/downloads). PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!
+
+Dal terminale sulla macchina remota, lanciate i seguenti comandi.
 ```
 sudo yum update -y
 
@@ -58,8 +73,32 @@ git clone <URL-del-vostro-repository-su-github>
 cd <cartella-del-progetto-appena-scaricata>
 docker-compose up
 ```
-Fatto!
+Fatto, la macchina è configurata!
 
-Riferimenti:
-- [Docker](https://hackernoon.com/running-docker-on-aws-ec2-83a14b780c56)
-- [Docker compose](https://docs.docker.com/compose/install/)
+Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: aprire la porta http.
+
+>
+> Riferimenti:
+> - [Docker](https://hackernoon.com/running-docker-on-aws-ec2-83a14b780c56)
+> - [Docker compose](https://docs.docker.com/compose/install/)
+
+## Gruppi di sicurezza
+Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP.
+
+Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna "Security Group" e selezionare il link "launch-wizard-1". Nella finestra che si apre cliccare sul bottone "Actions"->"Edit inbound rules" e quindi "Add rule". Selezionare come tipo "HTTP" e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.
+
+## Accesso all'istanza dal browser
+Ora siamo pronti per accedere all'istanza. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il "Public DNS" e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:
+
+```
+ec2-18-215-229-80.compute-1.amazonaws.com:8080
+```
+
+Se tutto va bene, vedrete la vostra pagina in cloud. Complimenti!
+
+## Fermare l'istanza
+Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è _running_, state consumando credito, indipendentemente dagli accessi.
+
+Per fermare l'istanza, andate sulla lista delle istanze, selezionate "Actions", quindi su "States" selezionate "Stop" se volete fermarla e prevedete di riutilizzarla in seguito, o "Terminate" se volete completamente eliminarla.
+
+Precisazione: in generale, anche quando una istanza è _stopped_, continuate a consumare de credito per lo _storage_ che state utilizzando. Ma nel nostro caso la quantità di storage utilizzata è minima e quindi anche questa componente del costo.
