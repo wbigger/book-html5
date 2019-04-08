@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>JS - TPSI - HTML5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Materiale di supporto alle lezioni.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><a href="../html5/03-js.html" class="active"><strong aria-hidden="true">2.3.</strong> JS</a></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/local.html"><strong aria-hidden="true">3.1.</strong> Local</a></li><li><a href="../deploy/onprem.html"><strong aria-hidden="true">3.2.</strong> On-Premises</a></li><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.3.</strong> Cloud</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">TPSI - HTML5</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.centered {
+	text-align: center;
+}
+img.right_side {
+  float: right;
+  margin:5px 5px 0px 20px;
+  width: 30%;
+}
+img.left_side {
+  float:left;
+  margin:5px 20px 0px 5px;
+  width: 20%;
+}
+
+p.clear {
+  clear: both;  
+}
+p.img-container {
+  margin-bottom: 15px;
+
+
+}
+
+p.img-container::after {
+  margin-bottom: 15px;
+  overflow: hidden;
+  clear: both;
+}
+</style>
+<a class="header" href="#javascript" id="javascript"><h1>JavaScript</h1></a>
+<p>La pagina fin qui creata è <em>statica</em>, ovvero i dati degli eventi sono scritti in maniera fissa, non modificabile, all'interno del file HTML. Chiaramente non è quello che vogliamo, perché il nostro obiettivo è che ogni volta che l'utente apre la pagina, gli mostri gli eventi aggiornati in quel momento: vogliamo una pagina <em>dinamica</em>. Per fare questo ci serve l'ultimo componente di HTML5: JavaScript.</p>
+<a class="header" href="#un-po-di-storia" id="un-po-di-storia"><h2>Un po' di storia</h2></a>
+<p class="img-container">
+JavaScript è nato all'interno della [Netscape](https://it.wikipedia.org/wiki/Netscape_Navigator), la società americana che sviluppò nel 1993 il primo web browser grafico di larga diffusione (ricordiamo che il web è nato nel 1989 in Europa). Nel 1995 cercavano una tecnologia per rendere dinamiche le pagine web, e diedero l'incarico al neo-assunto [Bernard Eich](https://en.wikipedia.org/wiki/Brendan_Eich) di creare un linguaggio di programmazione per competere con i rivali (Java e Microsoft). Gli diedero 10 giorni di tempo, nel maggio 1995.
+<img class="right_side" title="Bernard Eich." alt="Bernard Eich" src="assets/js-eich.jpg">
+</p>
+<p>Eich riuscì nell'impresa e creò il linguaggio JavaScript, definito nel suo <a href="https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html">annuncio ufficiale</a> come &quot;open, cross-platform object scripting language&quot; che avrebbe dovuto &quot;complementare il linguaggio Java&quot;.</p>
+<p><a href="https://www.crockford.com/javascript/javascript.html">Sembra</a> che il prefisso Java sia stato scelto intenzionalmente per creare confusione e per scherzo. In ogni caso la Sun Microsystem, che deteneva i diritti di Java a quel tempo, non protestò, e cosi è rimasto questo nome.</p>
+<p class="img-container">
+Da allora il linguaggio è cresciuto in funzionalità e diffusione, fino ad arrivare nel 2019 ad essere tra i 10 linguaggi più usati al mondo, in continua crescita. La sua vitalità è testimoniata dagli standard in continuo aggiornamento. Le funzionalità di JavaScript sono infatti definite e standardizzate dalla [ECMA](https://www.ecma-international.org/) (European Computer Manufacturers Association), con sede a Ginevra. L'ultima versione dello standard JavaScript si chiama ES2017 (anche detto ES8, giusto per creare un po' più di confusione).
+<img class="left_side" title="JavaScript logo" alt="JavaScript logo" src="assets/js-logo.png">
+</p>
+<p>La nascita un po' casuale di questo linguaggio è uno dei motivi per cui molte cose in JavaScript non hanno una ragione particolare, almeno nella versione classica (fino allo standard ES5 del 2009).</p>
+<p>Inoltre, JavaScript lascia molta libertà agli sviluppatori di decidere il loro stile di programmazione. Questo fa sì che, senza delle linee guida condivise tra sviluppatori, il codice scritto da persone diverse finisce per essere incompatibile o incomprensibile. Quest</p>
+<a class="header" href="#agganciare-html-e-js" id="agganciare-html-e-js"><h2>Agganciare HTML e JS</h2></a>
+<p>Cominciamo creando un file nella stessa cartella dell'index, e lo chiamiamo <code>app.js</code>. Per fare una prova, per ora mettiamo solo la visualizzazione di un pop-up, che in JavaScript si ottiene con la funzione <code>alert()</code>.</p>
+<pre><code class="language-js">alert(&quot;JS test&quot;);
+</code></pre>
+<p>Se proviamo ora ad aggiornare la nostra pagina, non succede niente. Perché?</p>
+<p>Come abbiamo detto, <strong>tutto parte sempre dall'HTML</strong>. Il nostro browser comincia a leggere il file HTML che abbiamo indicato con l'URL nella barra di navigazione, e riga dopo riga interpreta quello che c'è scritto. Dobbiamo quindi mettere nel nostro <code>index.html</code> l'istruzione per dirgli di andare a leggere il file.</p>
+<p>Il tag necessario per questa operazione è <strong><code>&lt;script&gt;</code></strong>, a cui bisogna specificare come attributo il nome del file che vogliamo caricare. Ecco il codice che ci serve:</p>
+<pre><code class="language-html">&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Dove mettiamo questo codice? Nei testi viene suggerito di mettere il tag <code>&lt;script&gt;</code> all'interno del tag <code>&lt;head&gt;</code>, e noi seguiremo questo suggerimento. Ma attenzione: di default il browser eseguirà tutto il codice dentro il nostro script e <strong>solo dopo</strong> continuerà ad interpretare la pagina, con la conseguenza l'utente potrebbe avvertire una fastidiosa sensazione di lentezza.</p>
+<blockquote>
+<p>Se volete evitare che la lettura dello script rallenti il caricamento della pagina, avete diverse possibilità:</p>
+<ul>
+<li>spostare il tag script alla fine della pagina, subito prima della chiusura del tag <code>&lt;/body&gt;</code>, oppure</li>
+<li>aggiungere l'attributo &quot;async&quot; o &quot;defer&quot; al tag script, per dettagli vedi <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a> nella sezione &quot;Tips and Notes&quot;</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Come sempre in VSCode, digitando script:src si avvia l'autocompletamento.</p>
+</blockquote>
+<p>Avviando la pagina otteniamo la seguente cosa.</p>
+<p align="center">
+<img title="js-alert" src="assets/js-alert.png">
+</p>
+<p>Bene, il file JavaScript è collegato correttamente! 🥳</p>
+<p>Prima di andare avanti, vogliamo semplificarci un po' le cose usando una libreria molto diffusa che permette di ridurre drasticamente il codice da scrivere per eseguire operazioni comuni: jQuery.</p>
+<blockquote>
+<p>Un'altra libreria molto usata è <a href="https://lodash.com/">Lodash</a>, che semplifica la manipolazione di array, stringhe e oggetti.</p>
+</blockquote>
+<a class="header" href="#importare-jquery" id="importare-jquery"><h2>Importare jQuery</h2></a>
+<p><a href="https://jquery.com/">jQuery</a> (pronuncia <em>jeiquiri</em>) è una delle librerie più diffuse per JavaScript, perché permette di semplificare e velocizzare operazioni che altrimenti richiederebbero un bel po' di linee di codice. Per scaricare l'ultima versione, andate sul sito ufficiale, sezione Download, e selezionate la versione &quot;Download the compressed, production jQuery&quot;. Se volete scaricare il file, vi conviene premere con il tasto destro sul link e selezionare &quot;Salva destinazione con nome...&quot; o l'equivalente nel vostro broser. Come al solito, salvate il file nella stessa cartella dove si trova il file html.</p>
+<p align="center">
+<img title="js-jquery" src="assets/js-jquery.png">
+</p>
+<blockquote>
+<p>Attenzione: la semplificazione offerta da jQuery non è gratis. Questa libreria è piuttosto pesante ed il browser ci metterà un po' di tempo a caricarla, con il rischio di inficiare l'esperienza utente. Quando diventerete sviluppatori front-end professionisti, dovrete fare attenzione anche a queste cose. Il codice JavaScript &quot;puro&quot;, senza l'uso di nessuna libreria, è anche detto <em>VanillaJS</em>; <a href="http://vanilla-js.com/">qui</a> trovate un sito scherzoso sull'argomento.</p>
+</blockquote>
+<p>Colleghiamo il file nel nostro progetto, mettendo il tag script <em>prima</em> dell'inclusione del nostro file JavaScript. Questo è fondamentale perché, come abbiamo detto, il browser interpreta le linee in ordine, quindi è necessario prima importare jQuery, e dopo il nostro codice che dipende da questa libreria.</p>
+<pre><code class="language-html">&lt;script src=&quot;jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>È interessante notare come non sia possibile importare una dipendenza direttamente all'interno del file JavaScript, ma bisogna passare per il file HTML.</p>
+<blockquote>
+<p>Per risolvere questo problema, sono nati vari framework più o meno complessi che permettono di gestire le dipendenze in maniera efficente ed efficace. Chi è interessato, può ad esempio studiarsi <a href="https://webpack.js.org/">Webpack</a>.</p>
+</blockquote>
+<a class="header" href="#primi-passi-con-jquery" id="primi-passi-con-jquery"><h2>Primi passi con jQuery</h2></a>
+<p>Per cominciare ad usare jQuery, dobbiamo inizializzare la libreria. Andiamo sul nostro file JavaScript e aggiungiamo il seguente snippet di codice.</p>
+<pre><code class="language-js">var init = function() {
+  alert(&quot;JS test with Jquery&quot;);
+}
+
+$(document).ready(init);
+</code></pre>
+<p>Vediamo in dettaglio cosa abbiamo fatto. Partiamo dall'ultima riga.</p>
+<pre><code class="language-js">$(document).ready(init);
+</code></pre>
+<p>Il simbolo <code>$</code> è il nome della variabile oggetto messa a disposizione dalla libreria jQuery. In JavaScript infatti, il dollaro è un carattere valido per l'inizio di una nome di una variabile o funzione.</p>
+<blockquote>
+<p>jQuery mette a disposizione solo la variabile <code>$</code>. Pubblicare una sola variabile è una cosa molto comune in JavaScript, come vedremo.</p>
+</blockquote>
+<p>La <strong>variabile <code>document</code></strong> è invece messa a disposizione dal browser e contiene tutte le informazioni che riguarda la pagina html e i relativi fogli di stile CSS. È il nostro punto di contatto tra l'html e gli script JavaScript.</p>
+<p>L'espressione <code>$(document)</code> serve a <em>inizializzare</em> la libreria jQuery con il documento corrente. In questo modo inoltre jQuery prende il controllo del documento, e noi non andremo <em>mai più</em> ad usare la variabile <code>document</code> direttamente, ma passeremo sempre attraverso l'oggetto <code>$()</code>.</p>
+<p>Immediatamente dopo l'inizializzazione viene chiamato il metodo <code>.ready()</code>, che richiede come parametro <em>una funzione</em>. Passare come parametri funzioni è una cosa estremamente comune in JavaScript, e anche noi la useremo estensivamente. Il metodo <code>ready</code> invocherà la funzione passatagli come parametro, nel nostro caso <code>init</code>, quando il caricamento della pagina sarà completo e quindi saremo pronti per il processamento del documento.</p>
+<p>Vediamo ora come abbiamo dichiarato la funzione <code>init</code>.</p>
+<pre><code class="language-js">var init = function() {
+  alert(&quot;JS test with Jquery&quot;);
+}
+</code></pre>
+<p>Facciamo particolare attenzione a questa sintassi. Abbiamo dichiarato la variabile <code>init</code>, ed abbiamo usato l'operatore di assegnazione (il simbolo <code>=</code>) per assegnarli come valore una funzione. In questo modo abbiamo di fatto creato una variabile che può essere invocata come una funzione (ovvero con le parentesi tonde, <code>init()</code>).</p>
+<blockquote>
+<p>La funzione dichiarata in questo modo <em>non</em> ha un nome suo, infatti non c'è nessun identificativo fra la keyword <code>function</code> e le parentesi tonde che seguono. Questo tipo di funzioni si chiamano <em>anonime</em>, in inglese <em>anonymous-functions</em>. Chi vuole approfondire può leggere <a href="http://helephant.com/2008/08/23/javascript-anonymous-functions/">questo articolo</a>.</p>
+</blockquote>
+<p>Se ora ricarichiamo la pagina, otteniamo un comportamento molto simile al procedente.</p>
+<p align="center">
+<img title="js-alert" src="assets/js-alert.png">
+</p>
+<a class="header" href="#scope-di-funzione" id="scope-di-funzione"><h2>Scope di funzione</h2></a>
+<p>Prima di andare avanti, è bene impostare correttamente il file JavaScript. Questo linguaggio infatti lascia moltissima libertà ai programmatori nell'organizzazione del codice, e questa è una buona cosa perché è possibile creare librerie e framework molto potenti, ma senza un po' di disciplina si finsce con lo scrivere del codice che è completamente non mantenibile e soggetto ad infiniti tipi di bug. Rimandiamo al link all'inizio di questa pagina per una syle-guide.</p>
+<blockquote>
+<p>Fate particolare attenzione quando copiate-incollate codice da Internet. Assicuratevi che sia scritto bene, e che segua le vostre convenzioni. Alcune stime non ufficiali dicono che l'80% del codice JavaScript reperibile su Internet è monnezza, quindi state in guardia.</p>
+</blockquote>
+<p>Per cominciare, bisogna sapere che le variabili in JavaScript dichiarate con <code>var</code> hanno uno <strong>scope di funzione</strong>, ovvero sono visibili in tutta la funzione in cui sono state dichiarate, <em>indipendentemente dal file o dal blocco in cui si trovano</em>.</p>
+<p>Cosa significa in pratica? Significa che i seguenti due snippet di codice sono equivalenti:</p>
+<pre><code>function() {
+    var myName = &quot;Harry&quot;;
+    if (myName == &quot;Harry&quot;) {
+        var myFriend = &quot;Ron&quot;;
+        alert(&quot;myFriend name is &quot;+ myFriend);
+    }
+}
+</code></pre>
+<pre><code>function() {
+    var myName = &quot;Harry&quot;;
+    var myFriend = &quot;Ron&quot;;
+    if (myName == &quot;Harry&quot;) {
+        alert(&quot;myFriend name is &quot;+ myFriend);
+    }
+}
+</code></pre>
+<p>Come vedete, la variabile <code>myFriend</code> è salita fino in cima alla funzione, uscendo dallo scope dell'<code>if</code> da cui era definita. Questo è un comportamento inusuale, rispetto ad altri linguaggi, e potenzialmente rischioso! Infatti si rischia un conflitto di nomi tra variabili dichiarate anche lontano fra loro.</p>
+<blockquote>
+<p>Questo comportamento si chiama <em>hoisting</em>. Vedi la <a href="https://developer.mozilla.org/it/docs/Glossary/Hoisting">documentazione ufficiale</a> per dettagli.</p>
+</blockquote>
+<p>La cosa è particolarmente pericolosa se si dichiarano variabili al di fuori di tutte le funzioni. Cosa succede in questo caso? Le variabili vanno a finire nella funzione <em>globale</em> del browser, che si chiama <code>window()</code>. Come sappiamo, le variabili globali sono estremamente pericolose perché potrebbero andare in conflitto in qualsiasi momento e in modo imprevedibile con altre variabili dichiarate chissà dove, da noi o da altre librerie.</p>
+<p>Per evitare il più possibile di usare variabili globali, ci sono varie strategie. Noi ne useremo una semplice e molto diffusa:</p>
+<ul>
+<li>dichiariamo un unica variabile globale con lo stesso nome del file</li>
+<li>mettiamo tutte le variabili (stringhe, numeri, funzioni e altri oggetti) come proprietà e metodi di questo oggetto</li>
+</ul>
+<blockquote>
+<p>Se avete fatto attenzione, questo è anche il metodo usato da jQuery con la sua variabile <code>$</code>.</p>
+</blockquote>
+<a class="header" href="#creazione-delloggetto-globale-app" id="creazione-delloggetto-globale-app"><h2>Creazione dell'oggetto globale app</h2></a>
+<p>Creiamo quindi il nostro oggetto globale. Per dichiarare un oggetto in JavaScript si usano le parentesi graffe. Un oggetto vuoto è quindi dichiarato così:</p>
+<pre><code class="language-js">var app = {};
+</code></pre>
+<p>Ogni proprietà e metodo all'interno dell'oggetto viene dichiarato con la sintassi <code>nome:valore</code>. Se vogliamo dichiarare ed assegnare la nostra funzione init all'interno di questo oggetto, la sintassi quindi sarà la seguente.</p>
+<pre><code class="language-js">var app = {
+  init: function() {
+    alert(&quot;JS test with Jquery&quot;);
+  }
+};
+</code></pre>
+<p>A questo punto il nostro file <code>app.js</code> avrà il seguente aspetto.</p>
+<pre><code class="language-js">var app = {
+  init: function() {
+    alert(&quot;JS test with Jquery&quot;);
+  }
+};
+
+$(document).ready(app.init);
+</code></pre>
+<p>Notiamo che all'interno del metodo <code>ready</code> abbiamo messo ora <code>app.init</code>. Questo perché la variabile init non è più visibile dallo scope gloale, e dobbiamo quindi richiamarla all'interno dell'oggetto <code>app</code>.</p>
+<p>Attenzione: non confondete le notazioni <code>app.init</code> (senza parentesi) e <code>app.init()</code> (con le parentesi). La prima notazione è la variabile che contiene la funzione: quando l'usate, la funzione stessa <strong>non</strong> viene richiamata. La funzione verrà realmente chiamata solo quando il documento è effettivamente pronto. Con la notazione <code>app.init()</code> invece noi stiamo chiamando la funzione, e passiamo alla funzione <code>ready</code> il <em>valore di ritorno</em> della funzione <code>app.init</code>. Siccome nel nostro caso la funzione init non ritorna nessun valore, verrà passato il valore <code>undefined</code>, che è una keyword del linguaggio ed un valore speciale. Provare per credere.</p>
+<a class="header" href="#debug-di-javascript" id="debug-di-javascript"><h1>Debug di JavaScript</h1></a>
+<p>Come si fa a fare il debug di una applicazione in JavaScript?</p>
+<p>Per fortuna quasi tutti i browser (a parte Explorer) hanno degli ottimi strumenti di sviluppo.</p>
+<p>Quindi il flusso tipico di lavoro è questo:</p>
+<ul>
+<li>scrivete il codice con l'edito che preferite (VSCode, Notepad++, etc.)</li>
+<li>fate il debug con gli strumenti sviluppatori del browser</li>
+</ul>
+<p>Per aprire gli strumenti sviluppatori, il modo più semplice è cliccare con il tasto destro da qualche parte nella pagina e selezionare &quot;Analizza elemento&quot; su Firefox, &quot;Ispeziona&quot; su Chrome e Safari, etc.</p>
+<p align="center">
+<img title="js-devtools" src="assets/js-devtools.png">
+</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../html5/02-css.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../deploy/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../html5/02-css.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../deploy/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
