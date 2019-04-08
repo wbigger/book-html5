@@ -1,0 +1,104 @@
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.tablerow {
+    display: table-row;
+}
+
+.tablehead {
+    display: table-cell;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 0 1% 0;
+    font-size: 8pt;
+    font-weight: bolder;
+
+}
+
+.tablecell {
+    display: table-cell;
+    padding: 1% 0 1% 0;
+    font-size: 8pt;
+    font-weight: bold;
+    vertical-align: top;
+    clear: both;
+}
+
+.date {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background: #5c00ff;
+    color: #00fdff;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2%;
+    float: left;
+    margin-right: 5%;
+}
+
+.hour {
+    color: #161616;
+    font-size: 7pt;
+    margin: 5px 0 0 5px;
+    float: left;
+}
+.month {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.datename {
+    float: left;
+    margin-top: 12px;
+    color: #5c00ff;
+}
+
+.locationname {
+    font-size:7pt;
+    margin:13px 0 0 20px;
+}
+
+.avatar {
+    width:32px;
+    height:32px;
+    border-radius:100px;
+    float:left;
+    margin-top:10px;
+}
+
+.iconclock {
+    float: left;
+    margin-top: 2px;
+}
+
+.iconlocation {
+    float:left;
+    margin-top:13px;
+}
+
+.iconcheck {
+    float:left;
+    margin-top:18px;
+}
+
+.address {
+    font-size:6.5pt;
+    color:grey;
+}
+
+.name {
+    margin:22px 0 0 40px;
+    font-size:6.5pt;
+}
+
+.answer {
+    color: #5c00ff;
+    margin:20px 0 0 22px;
+}
