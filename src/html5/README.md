@@ -38,3 +38,7 @@ Importanti:
 > Altri link interessanti:
 > - [csszengarden](http://csszengarden.com): esempi di come può cambiare la stessa pagina HTML con differenti CSS
 > - [uplabs](https://www.uplabs.com/): sito dove potete trovare molti esempi di layout
+
+### JavaScript
+Importanti:
+- [Code conventions](https://crockford.com/javascript/code.html)
