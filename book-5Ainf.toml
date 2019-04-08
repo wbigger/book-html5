@@ -1,0 +1,8 @@
+[book]
+title = "TPSI - HTML5"
+author = "Claudio Capobianco"
+description = "Materiale di supporto alle lezioni."
+
+[build]
+build-dir = "book-5inf"
+create-missing = true
