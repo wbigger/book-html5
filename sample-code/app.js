@@ -1,1 +1,3 @@
-alert("JS Test");
+//alert("JS Test");
+
+console.log("JS Test");

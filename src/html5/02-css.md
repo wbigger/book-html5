@@ -1,352 +1,80 @@
+<style>
+.centered {
+	text-align: center;
+}
+
+img {
+  width: 20%;
+}
+
+img.right_side {
+  float: right;
+  margin:5px 5px 0px 20px;
+  width: 30%;
+}
+img.left_side {
+  float:left;
+  margin:5px 20px 0px 5px;
+  width: 20%;
+}
+
+p.clear {
+  clear: both;  
+}
+p.img-container {
+  margin-bottom: 15px;
+}
+
+p.img-container::after {
+  margin-bottom: 15px;
+  overflow: hidden;
+  clear: both;
+}
+</style>
+
 # CSS
 
-Creiamo il nostro foglio di stile e lo chiamiamo `style.css`. Lo linkiamo alla pagina HTML inserendo all'interno del tag `<head>` questa riga:
+<p class="img-container">
+L'HTML è fin da subito nato come uno standard aperto: questo all'inizio ha creato delle difficoltà, ma con il passare del tempo si è rivelato un aspetto vincente.
 
-```html
-<link rel="stylesheet" href="style.css">
-```
-> In VSCode, digitando link:css, si avvia l'autocompletamento.
+<img class="right_side" title="CSS logo" alt="CSS logo" src="assets/css-logo.png" width="15%">
 
-> In questo caso non avrebbe senso mettere lo stile inline perché dovremmo ripeterlo per ogni tag di riga e cella. Avremmo potuto mettere lo stile in testa alla pagina, ma **è buona norma metterlo in un file separato**, per poterlo gestire più facilmente.
-
-Apriamo il nostro foglio di stile e cominciamo a scaldarci. Per prima cosa, cambiamo il font di default a tutta la pagina, usando il selettore universale asterisco:
-
-```css
-* {
-    font-family: Arial, Helvetica, sans-serif
-}
-```
-
-> In VSCode, digitando font-family, si avvia l'autocompletamento di tutta la riga, compresi i valori della proprietà.
-
-Aggiorniamo la pagina e vediamo se è cambiato qualcosa:
-<p align="center">
-<img title="html-font" src="assets/css-font.png">
 </p>
 
-Wow, il font è cambiato davvero :)
+La definizione del CSS è un tipico esempio di quanto detto. Nei primi anni di diffusione (1993-1996) le diverse aziende concorrenti che hanno creato i primi browser (Netscape e Internet Explorer in particolare) crearono delle estensioni proprietarie dell'HTML con l'aggiunta di confusione e difficoltà per gli sviluppatori.Il w3c decise quindi di affrontare questo problema creando un gruppo di lavoro che produsse uno standard nel 1996 chiamato Cascading Style Sheet (CSS).
 
-Ora creiamo lo scheletro del nostro CSS in accordo con le classi che abbiamo definito nell'HTML:
+Questa divisione si rivelò estremamente efficace per risolvere i problemi che si sono posti con il passare degli anni. In particolare, riuscì in modo eccellente a risolvere il problema della diversa dimensione degli schermi dei palmari prima e degli smartphone poi.
 
-```css
-* {
-    font-family: Arial, Helvetica, sans-serif
-}
+Oggi CSS include moltissime funzionalità che permettono l'animazione degli elementi nelle pagine, le trasformazioni (es. rotazione, scalatura), i gradienti e molte altre cose.
 
-.table {
+# Concetti base
 
-}
+## Selettori
+Il CSS si basa su questi due passaggi:
+1. selezionare gli elementi a cui si vuole applicare un certo stile
+2. dichiarare le proprietà da applicare a quegli elementi.
 
-.tablerow {
-
-}
-
-.tablehead {
-
-}
-
-.date {
-
-}
-
-.hour {
-
-}
-
-.month {
-
-}
-
-.datename {
-
-}
-
-.locationname {
-
-}
-
-.avatar {
-
-}
-
-.iconclock {
-
-}
-
-.iconlocation {
-
-}
-
-.iconcheck {
-
-}
-
-.address {
-
-}
-
-.name {
-
-}
-
-.answer {
-
-}
-
-```
-
-Per prima cosa inseriamo le proprietà display, per creare la tabella:
-
-```css
-.table {
-    display: table;
-}
-
-.tablerow {
-    display: table-row;
-}
-
-.tablehead {
-    display: table-cell;
-}
-
-.tablecell {
-    display: table-cell;
-}
-```
-
-Che viene renderizzato così:
-<p align="center">
-<img title="css-font" src="assets/css-display.png">
+<p class="centered">
+<img style="width:85%; margin:15px 0" title="CSS selector" alt="CSS selector" src="assets/css-selector.gif" >
 </p>
 
-OK, abbiamo una disposizione a tabella. Ora dobbiamo lavorare sulle singole classi per adattare lo stile.
+I selettori di base sono di 3 tipi:
+- tag: non hanno nessun prefisso, selezionano tutti gli elementi con il tag selezionato. Ad esempio `div {background-color:red}` colora di rosso lo sfondo di tutti gli elementi con il tag div
+- id: ha come prefisso `#` (cancelletto), seleziona l'elemento che ha come attributo id il valore specificato. Ad esempio `#my-title {font-weight:bold}` rende grassetto l'elemento che ha come attributo `id="my-title"`
+- class: ha come prefisso `.` (punto), seleziona tutti gli elementi che hanno come attributo il valore specificato. Ad esempio `.small-images {width=5%}` imposta la larghezza di tutti gli elementi che hanno come attributo `class="small-images` al 5% della larghezza dello schermo.
 
-Per prima cosa lavoriamo sulla classe `.table`: vogliamo che occupi tutto lo spazio disponibile, quindi aggiungiamo la proprietà `width: 100%`.
+## Box model
+Un altro concetto fondamentale del CSS è che la pagina è come se fosse uno scaffale, in cui ogni elemento è una scatola (_box_). La scatola è composta dalla confezione (_border_), al cui interno c'è un contenuto (_content_) protetto dall'imballaggio (_padding_). Le scatole sono distanziate l'una dall'altra da un margine di spazio (_margin_).
 
-```css
-.table {
-    display: table;
-    width: 100%;
-}
-```
-<p align="center">
-<img title="css-100%" src="assets/css-100.png">
+<p class="centered">
+<img style="width:85%; margin:15px 0" title="CSS box model" alt="CSS box model" src="assets/css-box-model.jpg" >
 </p>
 
+Ricapitolando, la nomenclatura del box-model utilizzato da CSS è:
+- box: ogni elemento della nostra pagina
+- content: il contenuto vero e proprio, ad esempio il testo, l'immagine o altri elementi annidati
+- padding: l'imballaggio, sta all'interno della nostra scatola, quindi coprirà anche l'eventuale colore o immagine di sfondo
+- border: la confezione, ovvero il rettangolo che include padding e contenuto
+- margin: il margine tra una scatola e l'altra
 
-Ora lavoriamo sull'header. Vogliamo che:
-- ci sia una linea continua sotto, di color grigio chiaro (`border-bottom`)
-- il testo sia leggermente spostato in alto rispetto al bordo (`padding`)
-- il carattere sia di 8 punti e grassetto (`font-size` e `font-weight`)
-
-Aggiungiamo le proprietà per queste modifiche:
-
-```css
-.tablehead {
-    display: table-cell;
-    border-bottom: 1px solid lightgrey;
-    padding: 0 0 1% 0;
-    font-size: 8pt;
-    font-weight: bolder;
-}
-```
-
-Attenzione al campo padding: come per tutte le proprietà del box model, se si specificano quattro valori vengono interpretati come:
-
-<p align="center">
-<img title="padding" src="assets/list-cut-layout/list-cut-layout.003.png">
-</p>
-
-Ed ecco il risultato:
-<p align="center">
-<img title="css-header" src="assets/css-header.png">
-</p>
-
-Lavoriamo sulle celle del corpo della tabella. Vogliamo che tutte le celle di default abbiano le seguenti caratteristiche:
-- un po' di padding in alto ed in basso
-- il carattere di 8 punti e grassetto
-- allineamento verticale in alto, invece del default in basso (`vertical-align`)
-
-```css
-.tablecell {
-    display: table-cell;
-    padding: 1% 0 1% 0;
-    font-size: 8pt;
-    font-weight: bold;
-    vertical-align: top;
-}
-```
-<p align="center">
-<img title="css-cell" src="assets/css-cell.png">
-</p>
-
-Ora lavoriamo sulla prima cella. Come abbiamo visto [prima](#html-first-cell), questa cella è divisa in due parti: la data a sinistra e i dettagli a destra.
-
-Per il `<div>` della data, dobbiamo fare le seguenti cose:
-- il campo data deve essere un quadrato (`width` e `heigth`) con i bordi arrotondati (`border-radius`)
-- lo sfondo blu (`background`) e cambiamo anche il colore del testo (`color`)
-- il font di dimensione 12 punti e grassetto, centrato (`text-align`)
-- un po' di padding in tutte e quattro le direzioni
-- un po' di margine solo a destra (`margin-right`)
-
-```css
-.date {
-    width: 40px;
-    height: 40px;
-    border-radius: 3px;
-    background: #5c00ff;
-    color: #00fdff;
-    font-size: 12pt;
-    font-weight: bolder;
-    text-align: center;
-    padding: 2%;
-    margin-right: 5%;
-}
-```
-
-<p align="center">
-<img title="css-date" src="assets/css-date.png">
-</p>
-
-
-Uhm...la data è OK ma il testo dovrebbe stare a destra, invece che sotto. Per risolvere questo problema possiamo usare la proprietà CSS `float`, che imposta il blocco in modo che deve _flottare_ e non occupare tutta la larghezza disponibile nella pagina. Nel nostro caso il blocco `<div>`  deve _flottare a sinistra_, quindi usiamo la prorietà float con valore left:
-```css
-.date {
-    ...
-    float:left;
-}
-```
-<p align="center">
-<img title="css-date" src="assets/css-float.png">
-</p>
-
-Hooray! Prima di andare avanti però **attenzione**: la proprietà `float` ha un effetto che si propaga a tutti gli elementi che ha accanto ed in cui è contenuto, e questo può avere degli effetti indesiderati. È buona norma quindi interrompere la propagazione da qualche parte con la proprietà `clear:both`: noi la aggiungiamo alla classe `.tablecell`.
-
-```css
-.tablecell {
-    ...
-    clear: both;
-}
-```
-
-### Mettiamo insieme i pezzi
-A questo punto abbiamo tutti i pezzi che ci servono, ci rimane solo da aggiungere le proprietà giuste nel posto giusto. Il risutato finale è questo.
-
-```css
-* {
-    font-family: Arial, Helvetica, sans-serif
-}
-
-.table {
-    display: table;
-    width: 100%;
-}
-
-.tablerow {
-    display: table-row;
-}
-
-.tablehead {
-    display: table-cell;
-    border-bottom: 1px solid lightgrey;
-    padding: 0 0 1% 0;
-    font-size: 8pt;
-    font-weight: bolder;
-
-}
-
-.tablecell {
-    display: table-cell;
-    padding: 1% 0 1% 0;
-    font-size: 8pt;
-    font-weight: bold;
-    vertical-align: top;
-    clear: both;
-}
-
-.date {
-    width: 40px;
-    height: 40px;
-    border-radius: 3px;
-    background: #5c00ff;
-    color: #00fdff;
-    font-size: 12pt;
-    font-weight: bolder;
-    text-align: center;
-    padding: 2%;
-    float: left;
-    margin-right: 5%;
-}
-
-.hour {
-    color: #161616;
-    font-size: 7pt;
-    margin: 5px 0 0 5px;
-    float: left;
-}
-.month {
-    font-size: 9pt;
-    font-weight: bold;
-}
-
-.datename {
-    float: left;
-    margin-top: 12px;
-    color: #5c00ff;
-}
-
-.locationname {
-    font-size:7pt;
-    margin:13px 0 0 20px;
-}
-
-.avatar {
-    width:32px;
-    height:32px;
-    border-radius:100px;
-    float:left;
-    margin-top:10px;
-}
-
-.iconclock {
-    float: left;
-    margin-top: 2px;
-}
-
-.iconlocation {
-    float:left;
-    margin-top:13px;
-}
-
-.iconcheck {
-    float:left;
-    margin-top:18px;
-}
-
-.address {
-    font-size:6.5pt;
-    color:grey;
-}
-
-.name {
-    margin:22px 0 0 40px;
-    font-size:6.5pt;
-}
-
-.answer {
-    color: #5c00ff;
-    margin:20px 0 0 22px;
-}
-```
-
-Che ci porta a questo risultato:
-<p align="center">
-<img title="css-complete" src="assets/css-complete.png">
-</p>
-
-Era proprio quello che volevamo :D
-
-Adesso avete tutte le basi che vi servono per realizzare le vostre pagine. Buon lavoro.
-
-[Qui](https://jsfiddle.net/Savinss/5epkq0a3/4/) potrete trovare la versione live della nostra pagina, completa di HTML e CSS.
+Fate attenzione che i margini tra due elementi si sommano: quindi se un elemento ha margine destro pari a 10px, e il successivo ha margine sinistro pari a 15px, il margine totale sarà 25px.

@@ -1,4 +1,4 @@
-# HTML & CSS
+# HTML5 Walkthrough
 
 Il World Wide Web è nato nel 1989 sotto la guida del londinese [Tim Burners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee): una rete di pagine di testo collegate tra di loro. La sintassi utilizzata per scrivere queste pagine è l'HTML, che trova una sua prima definizione standard nel 1991.
 
