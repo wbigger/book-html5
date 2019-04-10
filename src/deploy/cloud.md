@@ -31,6 +31,7 @@ In Italia abbiamo [Aruba Cloud](https://www.cloud.it/), che fornisce servizi con
 ## Amazon Web Services
 Noi utilizzeremo i servizi di Amazon Web Services (abbreviato: AWS), perché è uno dei gestori più utlizzati e grazie da una convenzione, abbiamo del credito gratuito per gli studenti della nostra scuola.
 
+### Creazione account
 Per cominciare, chiedete al docente di invitarvi ad AWS Educate, e seguite le indicazioni che vi arrivano via email.
 
 Nel form di registrazione mettete i seguenti dati:
@@ -39,36 +40,45 @@ Nel form di registrazione mettete i seguenti dati:
 - Graduation Date: il mese (nel futuro) in cui prevedete di diplomarvi
 
 Una volta completata la registrazione, aprire AWS Educate e fare il login.
-Nella pagina che compare selezionare "Go to Classroom" e selezionare la propria classe.
 
-Ad un certo punto si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate su AWS Console.
+### Creare un'istanza
+Dopo aver fatto il login, nella pagina che vi si presenta selezionare "Go to Classroom" e quindi la propria classe.
 
-A questo punto vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito _non_ funzionerà.
+Dopo un paio di click si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate sul bottone AWS Console.
 
-Dalla lista dei servizi in alto, selezionare EC2. Nella pagina che si apre, selezionare il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.
+Ora vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito _non_ funzionerà.
+
+Dalla lista dei servizi in alto, selezionate EC2. Nella pagina che si apre, selezionate il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.
 
 Generate una nuova chiave privata quando richiesto. **ATTENZIONE!** mettete la chiave privata in un luogo sicuro, per esempio inviatevela per posta o copiatela su una chiavetta. Se perdete il file, non potrete più accedere alla vostra istanza; se qualcuno entra in possesso del file, potrà entrare e modificare la vostra istanza cloud.
 
-Una volta lanciata l'istanza, andate nella lista delle istanze, premete su "Connect", lasciate il default "A standalone SSH client". Come SSH Client, Amazon (e anche io) per Windows consiglia [Git Bash](https://git-scm.com/downloads). PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!
+### Accedere ad un'istanza
+Una volta lanciata l'istanza, andate nella lista delle istanze, premete su "Connect", lasciate il default "A standalone SSH client". Come SSH Client, Amazon (e anche io) per Windows consiglia [Git Bash](https://git-scm.com/downloads), che avete già installato. PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!
+
+### Configurazione della macchina remota
+Queste operazioni vanno fatto solo la prima volta.
 
 Dal terminale sulla macchina remota, lanciate i seguenti comandi.
 ```
 sudo yum update -y
 
+# install docker and docker-compose
 sudo yum install docker -y
+sudo groupadd docker
 sudo usermod -aG docker $USER # logout per avere effetto
 sudo systemctl start docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+# install git
 sudo yum install git -y
 ```
 Uscire con ctrl-D e rientrare per fare in modo che tutte le modifiche abbiano effetto.
 
 A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.
 ```
-# Siamo sull'istanza remota
+# we are on the remote instance
 git clone <URL-del-vostro-repository-su-github>
 cd <cartella-del-progetto-appena-scaricata>
 docker-compose up
@@ -82,13 +92,13 @@ Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: 
 > - [Docker](https://hackernoon.com/running-docker-on-aws-ec2-83a14b780c56)
 > - [Docker compose](https://docs.docker.com/compose/install/)
 
-## Gruppi di sicurezza
-Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP.
+### Gruppi di sicurezza
+Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP. Anche queste operazioni vanno fatte una sola volta per ogni istanza.
 
 Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna "Security Group" e selezionare il link "launch-wizard-1". Nella finestra che si apre cliccare sul bottone "Actions"->"Edit inbound rules" e quindi "Add rule". Selezionare come tipo "HTTP" e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.
 
-## Accesso all'istanza dal browser
-Ora siamo pronti per accedere all'istanza. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il "Public DNS" e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:
+### Accesso alla pagina web
+Ora siamo pronti per accedere alla pagina web della nostra istanza dal browser. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il "Public DNS" e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:
 
 ```
 ec2-18-215-229-80.compute-1.amazonaws.com:8080
@@ -96,7 +106,7 @@ ec2-18-215-229-80.compute-1.amazonaws.com:8080
 
 Se tutto va bene, vedrete la vostra pagina in cloud. Complimenti!
 
-## Fermare l'istanza
+### Fermare l'istanza
 Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è _running_, state consumando credito, indipendentemente dagli accessi.
 
 Per fermare l'istanza, andate sulla lista delle istanze, selezionate "Actions", quindi su "States" selezionate "Stop" se volete fermarla e prevedete di riutilizzarla in seguito, o "Terminate" se volete completamente eliminarla.

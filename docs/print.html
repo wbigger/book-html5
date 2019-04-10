@@ -977,6 +977,7 @@ $(document).ready(app.init);
 <p>In Italia abbiamo <a href="https://www.cloud.it/">Aruba Cloud</a>, che fornisce servizi con particolare attenzione al rispetto delle normative europee.</p>
 <a class="header" href="#amazon-web-services" id="amazon-web-services"><h2>Amazon Web Services</h2></a>
 <p>Noi utilizzeremo i servizi di Amazon Web Services (abbreviato: AWS), perché è uno dei gestori più utlizzati e grazie da una convenzione, abbiamo del credito gratuito per gli studenti della nostra scuola.</p>
+<a class="header" href="#creazione-account" id="creazione-account"><h3>Creazione account</h3></a>
 <p>Per cominciare, chiedete al docente di invitarvi ad AWS Educate, e seguite le indicazioni che vi arrivano via email.</p>
 <p>Nel form di registrazione mettete i seguenti dati:</p>
 <ul>
@@ -984,28 +985,35 @@ $(document).ready(app.init);
 <li>Level: Graduate</li>
 <li>Graduation Date: il mese (nel futuro) in cui prevedete di diplomarvi</li>
 </ul>
-<p>Una volta completata la registrazione, aprire AWS Educate e fare il login.
-Nella pagina che compare selezionare &quot;Go to Classroom&quot; e selezionare la propria classe.</p>
-<p>Ad un certo punto si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate su AWS Console.</p>
-<p>A questo punto vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito <em>non</em> funzionerà.</p>
-<p>Dalla lista dei servizi in alto, selezionare EC2. Nella pagina che si apre, selezionare il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.</p>
+<p>Una volta completata la registrazione, aprire AWS Educate e fare il login.</p>
+<a class="header" href="#creare-unistanza" id="creare-unistanza"><h3>Creare un'istanza</h3></a>
+<p>Dopo aver fatto il login, nella pagina che vi si presenta selezionare &quot;Go to Classroom&quot; e quindi la propria classe.</p>
+<p>Dopo un paio di click si dovrebbe aprire una pagina di Vocareum, dove potete vedere il vostro credito residuo. Cliccate sul bottone AWS Console.</p>
+<p>Ora vi ritrovate in una console reale di AWS! Ricordatevi di rimanere sempre in Virginia Settetrionale, altrimenti il vostro credito <em>non</em> funzionerà.</p>
+<p>Dalla lista dei servizi in alto, selezionate EC2. Nella pagina che si apre, selezionate il bottone blu per lanciare una nuova istanza. Lasciate tutto di default: Linux Amazon 2 AMI su x86 a 64bit, e t2.micro.</p>
 <p>Generate una nuova chiave privata quando richiesto. <strong>ATTENZIONE!</strong> mettete la chiave privata in un luogo sicuro, per esempio inviatevela per posta o copiatela su una chiavetta. Se perdete il file, non potrete più accedere alla vostra istanza; se qualcuno entra in possesso del file, potrà entrare e modificare la vostra istanza cloud.</p>
-<p>Una volta lanciata l'istanza, andate nella lista delle istanze, premete su &quot;Connect&quot;, lasciate il default &quot;A standalone SSH client&quot;. Come SSH Client, Amazon (e anche io) per Windows consiglia <a href="https://git-scm.com/downloads">Git Bash</a>. PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!</p>
+<a class="header" href="#accedere-ad-unistanza" id="accedere-ad-unistanza"><h3>Accedere ad un'istanza</h3></a>
+<p>Una volta lanciata l'istanza, andate nella lista delle istanze, premete su &quot;Connect&quot;, lasciate il default &quot;A standalone SSH client&quot;. Come SSH Client, Amazon (e anche io) per Windows consiglia <a href="https://git-scm.com/downloads">Git Bash</a>, che avete già installato. PuTTY è supportato ma più difficile da configurare e far funzionare. Seguite le indicazioni per accedere e finalmente vi troverete dentro la vostra macchina remota!</p>
+<a class="header" href="#configurazione-della-macchina-remota" id="configurazione-della-macchina-remota"><h3>Configurazione della macchina remota</h3></a>
+<p>Queste operazioni vanno fatto solo la prima volta.</p>
 <p>Dal terminale sulla macchina remota, lanciate i seguenti comandi.</p>
 <pre><code>sudo yum update -y
 
+# install docker and docker-compose
 sudo yum install docker -y
+sudo groupadd docker
 sudo usermod -aG docker $USER # logout per avere effetto
 sudo systemctl start docker
 sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+# install git
 sudo yum install git -y
 </code></pre>
 <p>Uscire con ctrl-D e rientrare per fare in modo che tutte le modifiche abbiano effetto.</p>
 <p>A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
-<pre><code># Siamo sull'istanza remota
+<pre><code># we are on the remote instance
 git clone &lt;URL-del-vostro-repository-su-github&gt;
 cd &lt;cartella-del-progetto-appena-scaricata&gt;
 docker-compose up
@@ -1019,15 +1027,15 @@ docker-compose up
 <li><a href="https://docs.docker.com/compose/install/">Docker compose</a></li>
 </ul>
 </blockquote>
-<a class="header" href="#gruppi-di-sicurezza" id="gruppi-di-sicurezza"><h2>Gruppi di sicurezza</h2></a>
-<p>Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP.</p>
+<a class="header" href="#gruppi-di-sicurezza" id="gruppi-di-sicurezza"><h3>Gruppi di sicurezza</h3></a>
+<p>Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP. Anche queste operazioni vanno fatte una sola volta per ogni istanza.</p>
 <p>Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna &quot;Security Group&quot; e selezionare il link &quot;launch-wizard-1&quot;. Nella finestra che si apre cliccare sul bottone &quot;Actions&quot;-&gt;&quot;Edit inbound rules&quot; e quindi &quot;Add rule&quot;. Selezionare come tipo &quot;HTTP&quot; e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.</p>
-<a class="header" href="#accesso-allistanza-dal-browser" id="accesso-allistanza-dal-browser"><h2>Accesso all'istanza dal browser</h2></a>
-<p>Ora siamo pronti per accedere all'istanza. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il &quot;Public DNS&quot; e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:</p>
+<a class="header" href="#accesso-alla-pagina-web" id="accesso-alla-pagina-web"><h3>Accesso alla pagina web</h3></a>
+<p>Ora siamo pronti per accedere alla pagina web della nostra istanza dal browser. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il &quot;Public DNS&quot; e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:</p>
 <pre><code>ec2-18-215-229-80.compute-1.amazonaws.com:8080
 </code></pre>
 <p>Se tutto va bene, vedrete la vostra pagina in cloud. Complimenti!</p>
-<a class="header" href="#fermare-listanza" id="fermare-listanza"><h2>Fermare l'istanza</h2></a>
+<a class="header" href="#fermare-listanza" id="fermare-listanza"><h3>Fermare l'istanza</h3></a>
 <p>Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è <em>running</em>, state consumando credito, indipendentemente dagli accessi.</p>
 <p>Per fermare l'istanza, andate sulla lista delle istanze, selezionate &quot;Actions&quot;, quindi su &quot;States&quot; selezionate &quot;Stop&quot; se volete fermarla e prevedete di riutilizzarla in seguito, o &quot;Terminate&quot; se volete completamente eliminarla.</p>
 <p>Precisazione: in generale, anche quando una istanza è <em>stopped</em>, continuate a consumare de credito per lo <em>storage</em> che state utilizzando. Ma nel nostro caso la quantità di storage utilizzata è minima e quindi anche questa componente del costo.</p>
