@@ -1012,13 +1012,6 @@ docker-compose --version
 sudo yum install git -y
 </code></pre>
 <p>Uscire con ctrl-D e rientrare per fare in modo che tutte le modifiche abbiano effetto.</p>
-<p>A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
-<pre><code># we are on the remote instance
-git clone &lt;URL-del-vostro-repository-su-github&gt;
-cd &lt;cartella-del-progetto-appena-scaricata&gt;
-docker-compose up
-</code></pre>
-<p>Fatto, la macchina è configurata!</p>
 <p>Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: aprire la porta http.</p>
 <blockquote>
 <p>Riferimenti:</p>
@@ -1030,6 +1023,14 @@ docker-compose up
 <a class="header" href="#gruppi-di-sicurezza" id="gruppi-di-sicurezza"><h3>Gruppi di sicurezza</h3></a>
 <p>Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP. Anche queste operazioni vanno fatte una sola volta per ogni istanza.</p>
 <p>Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna &quot;Security Group&quot; e selezionare il link &quot;launch-wizard-1&quot;. Nella finestra che si apre cliccare sul bottone &quot;Actions&quot;-&gt;&quot;Edit inbound rules&quot; e quindi &quot;Add rule&quot;. Selezionare come tipo &quot;HTTP&quot; e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.</p>
+<a class="header" href="#deploy-1" id="deploy-1"><h3>Deploy</h3></a>
+<p>A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
+<pre><code># we are on the remote instance
+git clone &lt;URL-del-vostro-repository-su-github&gt;
+cd &lt;cartella-del-progetto-appena-scaricata&gt;
+docker-compose up
+</code></pre>
+<p>Fatto, la macchina è pronta!</p>
 <a class="header" href="#accesso-alla-pagina-web" id="accesso-alla-pagina-web"><h3>Accesso alla pagina web</h3></a>
 <p>Ora siamo pronti per accedere alla pagina web della nostra istanza dal browser. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il &quot;Public DNS&quot; e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:</p>
 <pre><code>ec2-18-215-229-80.compute-1.amazonaws.com:8080

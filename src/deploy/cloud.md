@@ -76,15 +76,6 @@ sudo yum install git -y
 ```
 Uscire con ctrl-D e rientrare per fare in modo che tutte le modifiche abbiano effetto.
 
-A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.
-```
-# we are on the remote instance
-git clone <URL-del-vostro-repository-su-github>
-cd <cartella-del-progetto-appena-scaricata>
-docker-compose up
-```
-Fatto, la macchina è configurata!
-
 Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: aprire la porta http.
 
 >
@@ -96,6 +87,16 @@ Ora ci manca un ultimo passo per poter accedere da remoto alla nostra macchina: 
 Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP. Anche queste operazioni vanno fatte una sola volta per ogni istanza.
 
 Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna "Security Group" e selezionare il link "launch-wizard-1". Nella finestra che si apre cliccare sul bottone "Actions"->"Edit inbound rules" e quindi "Add rule". Selezionare come tipo "HTTP" e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.
+
+### Deploy
+A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.
+```
+# we are on the remote instance
+git clone <URL-del-vostro-repository-su-github>
+cd <cartella-del-progetto-appena-scaricata>
+docker-compose up
+```
+Fatto, la macchina è pronta!
 
 ### Accesso alla pagina web
 Ora siamo pronti per accedere alla pagina web della nostra istanza dal browser. Tornate sulla lista delle istanze e nei dettagli sotto, copiate il "Public DNS" e copiatelo sul vostro browser. Ricordatevi di aggiungere la porta. Il link risultante dovrebbe essere una cosa di questo genere:
