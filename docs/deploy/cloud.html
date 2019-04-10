@@ -213,7 +213,7 @@ sudo yum install git -y
 <p>Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la connessione SSH. Se vogliamo poter accedere via browser, ci serve aprire anche le porte per l'accesso HTTP. Anche queste operazioni vanno fatte una sola volta per ogni istanza.</p>
 <p>Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna &quot;Security Group&quot; e selezionare il link &quot;launch-wizard-1&quot;. Nella finestra che si apre cliccare sul bottone &quot;Actions&quot;-&gt;&quot;Edit inbound rules&quot; e quindi &quot;Add rule&quot;. Selezionare come tipo &quot;HTTP&quot; e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.</p>
 <a class="header" href="#deploy" id="deploy"><h3>Deploy</h3></a>
-<p>A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
+<p>A questo punto la nostra istanza è pronta per il deploy. Le istruzioni sono le stesse del deployment locale, che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.</p>
 <pre><code># we are on the remote instance
 git clone &lt;URL-del-vostro-repository-su-github&gt;
 cd &lt;cartella-del-progetto-appena-scaricata&gt;

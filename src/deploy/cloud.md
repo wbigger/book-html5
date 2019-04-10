@@ -89,7 +89,8 @@ Di default, l'unica porta aperta su un'istanza appena creata è la 22 per la con
 Andare sulla lista delle istanze, scorrere a destra finché non si arriva alla colonna "Security Group" e selezionare il link "launch-wizard-1". Nella finestra che si apre cliccare sul bottone "Actions"->"Edit inbound rules" e quindi "Add rule". Selezionare come tipo "HTTP" e come valore della porta mettete quella del vostro sito. Per sapere il numero di porta esatto, consultate il vostro file docker-compose.yml: è quel numero che va da 8080 a 8089.
 
 ### Deploy
-A questo punto la nostra istanza è pronta per il deploy. Seguite le istruzioni sul deployment locale [quando saranno disponibili], che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.
+A questo punto la nostra istanza è pronta per il deploy. Le istruzioni sono le stesse del deployment locale, che riassumo di seguito. Ricordatevi di sostituire l'URL del repository con il vostro.
+
 ```
 # we are on the remote instance
 git clone <URL-del-vostro-repository-su-github>
