@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/local.html"><strong aria-hidden="true">3.1.</strong> Local</a></li><li><a href="deploy/onprem.html"><strong aria-hidden="true">3.2.</strong> On-Premises</a></li><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.3.</strong> Cloud</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/local.html"><strong aria-hidden="true">3.1.</strong> Local</a></li><li><a href="deploy/onprem.html"><strong aria-hidden="true">3.2.</strong> On-Premises</a></li><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.3.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -1040,6 +1040,32 @@ docker-compose up
 <p>Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è <em>running</em>, state consumando credito, indipendentemente dagli accessi.</p>
 <p>Per fermare l'istanza, andate sulla lista delle istanze, selezionate &quot;Actions&quot;, quindi su &quot;States&quot; selezionate &quot;Stop&quot; se volete fermarla e prevedete di riutilizzarla in seguito, o &quot;Terminate&quot; se volete completamente eliminarla.</p>
 <p>Precisazione: in generale, anche quando una istanza è <em>stopped</em>, continuate a consumare de credito per lo <em>storage</em> che state utilizzando. Ma nel nostro caso la quantità di storage utilizzata è minima e quindi anche questa componente del costo.</p>
+<a class="header" href="#nosql-database" id="nosql-database"><h1>NoSQL database</h1></a>
+<p>I database NoSQL sono un'alternativa ai database SQL particolarmente utilizzata per le applicazioni web.</p>
+<p>Caratteristiche:</p>
+<ul>
+<li>non hanno uno schema che definisce la struttura del database</li>
+<li>alcuni dati sono ripetuti in diverse parti del database per migliorare le performance di lettura (a scapito di quelle di scrittura e spazio utilizzato)</li>
+<li>hanno una struttura ad albero e non a tabelle</li>
+<li>non esistono chiavi primarie esplicite, ma solo per convenzione dello sviluppatore</li>
+<li>non si interrogano con SQL, ma con altri metodi, tipicamente Restful (vedi dopo)</li>
+</ul>
+<p>Vantaggi:</p>
+<ul>
+<li>più semplice modificare i campi dei database, utile se i requisiti cambiano continuamente</li>
+<li>può scalare orizzontalmente, ovvero può essere distribuito facilmente su più computer</li>
+</ul>
+<p>Svantaggi:</p>
+<ul>
+<li>la lettura dei campi deve essere molto difensiva perché non si hanno certezze sulla struttura dei dati ricevuti</li>
+</ul>
+<p>Link utili:</p>
+<ul>
+<li><a href="https://it.wikipedia.org/wiki/Representational_State_Transfer">REST</a>, una filosofia di scrittura delle API per la quale al centro di tutto c'è la risorsa che viene manipolata attraverso vari metodi. Molto spesso associata all'HTTP. Con REST si possono effettuare le operazioni CRUD per un database, in <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">questo link</a> potete vedere una tabella di confronto tra NoSQL e SQL.</li>
+<li><a href="https://firebase.google.com/docs/database/rest/structure-data">Guida di Firebase</a> su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL</li>
+<li><a href="https://www.youtube.com/watch?v=v_hR4K4auoQ&amp;t=593s">Video di confronto</a> tra SQL e NoSQL.</li>
+<li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">Pagina di confronto</a> tra SQL e NoSQL.</li>
+</ul>
 
                     </main>
 

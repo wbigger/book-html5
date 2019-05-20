@@ -12,3 +12,4 @@
   - [Local](./deploy/local.md)
   - [On-Premises](./deploy/onprem.md)
   - [Cloud](./deploy/cloud.md)
+- [NoSQL database](./database/README.md)
