@@ -9,7 +9,6 @@
   - [JS](./html5/03-js.md)
     - [rendiamo la pagina dinamica](html5/03-walkthough.md))
 - [Deploy](./deploy/README.md)
-  - [Local](./deploy/local.md)
-  - [On-Premises](./deploy/onprem.md)
   - [Cloud](./deploy/cloud.md)
 - [NoSQL database](./database/README.md)
+- [Sostenibilità](./sustenability/README.md)
