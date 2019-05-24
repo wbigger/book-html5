@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/local.html"><strong aria-hidden="true">3.1.</strong> Local</a></li><li><a href="deploy/onprem.html"><strong aria-hidden="true">3.2.</strong> On-Premises</a></li><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.3.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li></ol>
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><a href="sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -944,9 +944,6 @@ $(document).ready(app.init);
 <blockquote>
 <p>In questo capitolo tradurremo la parola inglese &quot;deploy&quot; con &quot;dislocazione&quot;.</p>
 </blockquote>
-<a class="header" href="#local" id="local"><h1>Local</h1></a>
-<p>Deploy e test sul proprio computer...work in progress.</p>
-<a class="header" href="#on-premises" id="on-premises"><h1>On-Premises</h1></a>
 <a class="header" href="#cloud-computing" id="cloud-computing"><h1>Cloud computing</h1></a>
 <p>Un'azienda invece di dislocare le proprie risorse e servizi su una macchina all'interno dei locali dell'azienda stessa, può scegliere di dislocarli su macchine non di sua proprietà posizionate da qualche parte nel mondo in dei locali insieme ad altre decine, centinaia o migliaia di macchine che servono anche altre aziende. Questi locali vengono chiamate <em>server-farm</em> o <em>data center</em>. Per farvi un'idea, potete guardare <a href="https://www.youtube.com/watch?v=XZmGGAbHqa0">il tour virtuale</a> dei data center di Google.</p>
 <p>Negli ultimi anni, c'è stato un forte trend nello spostamento dei servizi da un'infrastuttura on-premises verso il cloud. Questo per diversi motivi:</p>
@@ -1065,6 +1062,99 @@ docker-compose up
 <li><a href="https://firebase.google.com/docs/database/rest/structure-data">Guida di Firebase</a> su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL</li>
 <li><a href="https://www.youtube.com/watch?v=v_hR4K4auoQ&amp;t=593s">Video di confronto</a> tra SQL e NoSQL.</li>
 <li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">Pagina di confronto</a> tra SQL e NoSQL.</li>
+</ul>
+<a class="header" href="#frameworks" id="frameworks"><h1>Frameworks</h1></a>
+<p>Quando si vogliono gestire funzionalità complesse come sincronizzazione dello stato locale della pagina con il database remoto, lavoro offline, etc., può essere molto utile usare un <em>framework</em> che permetta di gestire queste cose in modo più semplice.</p>
+<p>Attualmente (giugno 2019) tra i framework più usati ci sono:</p>
+<ul>
+<li><a href="https://angular.io/">Angular</a>, mantenuto da Google, usa TypeScript</li>
+<li>[React](https://en.wikipedia.org/wiki/React_(JavaScript_library), mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM</li>
+<li><a href="https://flutter.dev/">Flutter</a>, anche questo mantenuto da Google, è l'ultimo nato ma sta riscuotendo un enorme successo. Basato sul linguaggio Dart.</li>
+</ul>
+<style>
+.centered {
+	text-align: center;
+}
+img.right_side {
+  float: right;
+  margin:5px 5px 0px 20px;
+  width: 50%;
+}
+img.left_side {
+  float:left;
+  margin:5px 20px 0px 5px;
+  width: 20%;
+}
+
+p.clear {
+  clear: both;  
+}
+p.img-container {
+  margin-bottom: 15px;
+}
+
+p.img-container::after {
+  margin-bottom: 15px;
+  overflow: hidden;
+  clear: both;
+}
+</style>
+<a class="header" href="#sostenibilità" id="sostenibilità"><h1>Sostenibilità</h1></a>
+<p>Realizzare un sito bello, che funziona bene e che rispetti le richieste del cliente non è ancora abbastanza. Oggi infatti non possiamo più ignorare che qualsiasi nostra azione e progetto che realizziamo è strettamente interconnesso con tutto ciò che ci circonda ed ha un impatto sulla vita di tante persone e sull'ambiente, anche in modi che non ci potremmo immaginare.</p>
+<a class="header" href="#a17-obiettivi-di-sostenibilità" id="a17-obiettivi-di-sostenibilità"><h2>17 obiettivi di sostenibilità</h2></a>
+<p>L'Organizzazione delle Nazioni Unite nell'assemblea generale del 2015 ha fissato <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">17 obiettivi</a> da raggiungere entro il 2030, per rendere più sostenibile la vita sul nostro pianeta.</p>
+<p align="center">
+<a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">
+<img title="17 sustenability goals" alt="17 sustenability goals" src="assets/goals.png"></a>
+</p>
+<p>Tutti i goal sono associati a degli indicatori che possono essere misurati in maniera oggettiva: l'obiettivo è quindi raggiungere delle metriche chiave per ognuno di questi goal, o quantomeno migliorare le metriche attuali, per sapere se stiamo andando nella giusta direzione. Cliccando sull'immagine qui sopra potrete avere maggiori dettagli su ognuno di questi goal.</p>
+<a class="header" href="#cosa-significa-sostenibilità" id="cosa-significa-sostenibilità"><h2>Cosa significa sostenibilità</h2></a>
+<p>Ma cosa significa esattamente sostenibilità? Per rappresentare graficamente cosa si intende possiamo fare riferimento all'immagine qui sotto.</p>
+<p align="center">
+<img title="sustenability diagram" alt="sustenability diagram" src="assets/sustenability.png">
+</p>
+<p>Possiamo pensare alla sostenibilità, ad esempio della nostra azienda, come l'intersezione di tre diversi campi:</p>
+<ul>
+<li>economico: dobbiamo poter ricavare del profitto, ovvero ricavare più di quanto spendiamo;</li>
+<li>ambientale: deve avere il minimo impatto possibile sull'ambiente in termini di consumi energetici, materie prime, consumo del territorio, etc.</li>
+<li>sociale: dobbiamo promuovere lo sviluppo sociale ed i diritti di tutti i nostri lavoratori e delle persone coinvolte dalla nostra azienda</li>
+</ul>
+<a class="header" href="#limpatto-di-internet" id="limpatto-di-internet"><h2>L'impatto di Internet</h2></a>
+<p>Noi lavoriamo nel campo dell'Internet Economy, dove spesso i consumi energetici sono nascosti. Pensiamo ad esempio quanta energia consumiamo quando vediamo un film su Netflix. Dobbiamo considerare:</p>
+<ul>
+<li>il consumo del dispositivo su cui stiamo guardando il film (es. SmartTV)</li>
+<li>il consumo del router a cui è connessa la TV</li>
+<li>il consumo di tutti gli switch ed altre apparecchiature che collegano il nostro router ai data center di Netflix</li>
+<li>il consumo dei server nei data center di Netflix</li>
+<li>il consumo per la produzione di tutte le apparecchiature qui sopra</li>
+</ul>
+<p>Un articolo di <a href="https://www.nature.com/articles/d41586-018-06610-y">Nature</a> mostra delle stime in percentuale di come sono suddivisi questi consumi.</p>
+<p align="center">
+<img title="internet impact" alt="internet impact" src="assets/nature.png">
+</p>
+<p>Come si può vedere, i data center e le apparecchiature di rete diventeranno un fattore enorme di consumo energetico nei prossimi anni. Per questo bisogna agire, anche come consumatori responsabili di tecnologie, per fare in modo che questi valori di consumi crescano il meno possibile.</p>
+<p>Di seguito un podcast che vi consiglio di ascoltare, sempre dall'articolo di Nature sopra citato.</p>
+<p><audio controls>
+<source src="assets/nature.mpga" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio></p>
+<a class="header" href="#clickclean" id="clickclean"><h2>ClickClean</h2></a>
+<p class="img-container">
+<p><img class="right_side" title="clickgreen logo" alt="clickgreen logo" src="assets/clickgreen.png" style="width:15%"></p>
+<p>Come facciamo nella pratica? Ovviamente non c'è una risposta semplice, ma qualcosa possiamo sicuramente farlo, per prima cosa informarci. Ad esempio, un report di Greenpeace del 2017, <a href="http://www.clickclean.org/">ClickGreen</a>, cerca di fare un po' di luce sulle fonti di energia usate dalle grandi aziende di Internet.</p>
+</p>
+<p>L'executive summary all'inizio del report riassume tutti i punti più importanti. La buona notizia è che le aziende legate ad Internet sono le tra le più virtuose dal punto di vista delle fonti rinnovabili, e stanno facendo da traino anche per le altre società. Purtroppo però le aziende basate in Cina, come noto, si basano fortemente su fonti di energia non rinnovabili; considerando che sono anche le aziende in maggior crescita, questo crea un problema globale di notevoli dimensioni che ci coinvolge tutti. È altrettanto vero però che la Cina è il paese che investe di più al mondo sull'energia rinnovabile, e quindi anche in questo campo sta innovando molto, a differenza degli Stati Uniti rimangono praticamente fermi...</p>
+<a class="header" href="#conclusioni" id="conclusioni"><h2>Conclusioni</h2></a>
+<p>Insomma lo scenario sulla sostenibilità è in continuo e rapido movimento, e bisogna rivedere continuamente le nostre &quot;certezze&quot; o credenze, lasciando da parte i luoghi comuni. Consiglio a tutti gli studenti di cercare di farsi delle conoscenze di prima mano, andando in giro per il mondo come viaggiatori e non come turisti e conoscendo persone di vari paesi...Buon viaggio, mandatemi una cartolina!</p>
+<a class="header" href="#link-utili" id="link-utili"><h2>Link utili</h2></a>
+<ul>
+<li><a href="http://www.minambiente.it/pagina/gli-obiettivi-e-i-target">Ministero dell'ambiente italiano</a></li>
+<li><a href="https://www.bancaditalia.it">Banca d'Italia</a></li>
+<li><a href="https://ec.europa.eu">Comunità Europea</a></li>
+<li><a href="https://www.lifegate.it">Lifegate</a></li>
+<li><a href="https://www.noisiamopari.it/">Noi siamo pari</a></li>
+<li><a href="http://www.pariopportunita.gov.it/">Pari opportunità</a></li>
+<li><a href="https://www.unric.org/it">Centro Regionale di Informazione delle Nazioni Unite</a></li>
 </ul>
 
                     </main>
