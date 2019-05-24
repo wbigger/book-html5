@@ -21,3 +21,11 @@ Link utili:
 - [Guida di Firebase](https://firebase.google.com/docs/database/rest/structure-data) su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL
 - [Video di confronto](https://www.youtube.com/watch?v=v_hR4K4auoQ&t=593s) tra SQL e NoSQL.
 - [Pagina di confronto](https://www.sitepoint.com/sql-vs-nosql-differences/) tra SQL e NoSQL.
+
+# Frameworks
+Quando si vogliono gestire funzionalità complesse come sincronizzazione dello stato locale della pagina con il database remoto, lavoro offline, etc., può essere molto utile usare un _framework_ che permetta di gestire queste cose in modo più semplice.
+
+Attualmente (giugno 2019) tra i framework più usati ci sono:
+- [Angular](https://angular.io/), mantenuto da Google, usa TypeScript
+- [React](https://en.wikipedia.org/wiki/React_(JavaScript_library), mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM
+- [Flutter](https://flutter.dev/), anche questo mantenuto da Google, è l'ultimo nato ma sta riscuotendo un enorme successo. Basato sul linguaggio Dart.
