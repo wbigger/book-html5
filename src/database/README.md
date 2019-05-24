@@ -27,5 +27,5 @@ Quando si vogliono gestire funzionalità complesse come sincronizzazione dello s
 
 Attualmente (giugno 2019) tra i framework più usati ci sono:
 - [Angular](https://angular.io/), mantenuto da Google, usa TypeScript
-- [React](https://en.wikipedia.org/wiki/React_(JavaScript_library), mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM
+- [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)), mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM
 - [Flutter](https://flutter.dev/), anche questo mantenuto da Google, è l'ultimo nato ma sta riscuotendo un enorme successo. Basato sul linguaggio Dart.
