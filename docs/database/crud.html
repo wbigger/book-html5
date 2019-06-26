@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CSS - TPSI - HTML5</title>
+        <title>CRUD - TPSI - HTML5</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html" class="active"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/crud.html" class="active"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -140,15 +140,10 @@
 .centered {
 	text-align: center;
 }
-
-img {
-  width: 20%;
-}
-
 img.right_side {
   float: right;
   margin:5px 5px 0px 20px;
-  width: 30%;
+  width: 50%;
 }
 img.left_side {
   float:left;
@@ -169,57 +164,52 @@ p.img-container::after {
   clear: both;
 }
 </style>
-<a class="header" href="#css" id="css"><h1>CSS</h1></a>
-<p class="img-container">
-L'HTML è fin da subito nato come uno standard aperto: questo all'inizio ha creato delle difficoltà, ma con il passare del tempo si è rivelato un aspetto vincente.
-<p><img class="right_side" title="CSS logo" alt="CSS logo" src="assets/css-logo.png" width="15%"></p>
+<a class="header" href="#operazioni-crud" id="operazioni-crud"><h1>Operazioni CRUD</h1></a>
+<p>Quando interagiamo con un qualsiasi database, sappiamo bene che esistono diverse categorie di comandi per interrogarlo e manipolarlo. In generale, i diversi comandi rientrano all'interno delle operazioni cosiddette <strong>CRUD</strong>: <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate e <strong>D</strong>elete.</p>
+<p>I database SQL e NoSQL usano strategie diverse per eseguire queste operazioni. Di seguito una tabella riassuntiva di confronto.</p>
+<table><thead><tr><th> Operazione  </th><th> SQL </th><th> NoSQL (HTTP) </th></tr></thead><tbody>
+<tr><td> Create </td><td>INSERT</td><td>POST (o PUT)</td></tr>
+<tr><td> Read  </td><td>SELECT</td><td>GET</td></tr>
+<tr><td> Update  </td><td>UPDATE</td><td>PUT / PATCH</td></tr>
+<tr><td> Delete  </td><td>DELETE</td><td>DELETE</td></tr>
+</tbody></table>
+<a class="header" href="#selezione-della-risorsa" id="selezione-della-risorsa"><h2>Selezione della risorsa</h2></a>
+<p>In NoSQL, per selezionare l'elemento che si vuole creare o modificare, bisogna identificare <strong>l'URL</strong> della risorsa.</p>
+<p>In generale, avremo un URL base che identifica il database, e un path relativo che identifica la risorsa all'interno del db.</p>
+<p>Facciamo un esempio con il database di Google Firebase che abbiamo creato.</p>
+<p align="center">
+<img title="google-firebase" alt="google-firebase" src="assets/firebase.png"></a>
 </p>
-<p>La definizione del CSS è un tipico esempio di quanto detto. Nei primi anni di diffusione (1993-1996) le diverse aziende concorrenti che hanno creato i primi browser (Netscape e Internet Explorer in particolare) crearono delle estensioni proprietarie dell'HTML con l'aggiunta di confusione e difficoltà per gli sviluppatori. Il w3c decise quindi di affrontare questo problema creando un gruppo di lavoro che produsse uno standard nel 1996 chiamato Cascading Style Sheet (CSS).</p>
-<p>Questa divisione si rivelò estremamente efficace per risolvere i problemi che si sono posti con il passare degli anni. In particolare, riuscì in modo eccellente a risolvere il problema della diversa dimensione degli schermi dei palmari prima e degli smartphone poi.</p>
-<p>Oggi CSS include moltissime funzionalità che permettono l'animazione degli elementi nelle pagine, le trasformazioni (es. rotazione, scalatura), i gradienti e molte altre cose.</p>
-<a class="header" href="#concetti-base" id="concetti-base"><h1>Concetti base</h1></a>
-<a class="header" href="#selettori" id="selettori"><h2>Selettori</h2></a>
-<p>Il CSS si basa su questi due passaggi:</p>
-<ol>
-<li>selezionare gli elementi a cui si vuole applicare un certo stile</li>
-<li>dichiarare le proprietà da applicare a quegli elementi.</li>
-</ol>
-<p class="centered">
-<img style="width:85%; margin:15px 0" title="CSS selector" alt="CSS selector" src="assets/css-selector.gif" >
-</p>
-<p>I selettori di base sono di 3 tipi:</p>
-<ul>
-<li>tag: non hanno nessun prefisso, selezionano tutti gli elementi con il tag selezionato. Ad esempio <code>div {background-color:red}</code> colora di rosso lo sfondo di tutti gli elementi con il tag div</li>
-<li>id: ha come prefisso <code>#</code> (cancelletto), seleziona l'elemento che ha come attributo id il valore specificato. Ad esempio <code>#my-title {font-weight:bold}</code> rende grassetto l'elemento che ha come attributo <code>id=&quot;my-title&quot;</code></li>
-<li>class: ha come prefisso <code>.</code> (punto), seleziona tutti gli elementi che hanno come attributo il valore specificato. Ad esempio <code>.small-images {width=5%}</code> imposta la larghezza di tutti gli elementi che hanno come attributo <code>class=&quot;small-images</code> al 5% della larghezza dello schermo.</li>
-</ul>
-<a class="header" href="#box-model" id="box-model"><h2>Box model</h2></a>
-<p>Un altro concetto fondamentale del CSS è che la pagina è come se fosse uno scaffale, in cui ogni elemento è una scatola (<em>box</em>). La scatola è composta dalla confezione (<em>border</em>), al cui interno c'è un contenuto (<em>content</em>) protetto dall'imballaggio (<em>padding</em>). Le scatole sono distanziate l'una dall'altra da un margine di spazio (<em>margin</em>).</p>
-<p class="centered">
-<img style="width:85%; margin:15px 0" title="CSS box model" alt="CSS box model" src="assets/css-box-model.jpg" >
-</p>
-<p>Ricapitolando, la nomenclatura del box-model utilizzato da CSS è:</p>
-<ul>
-<li>box: ogni elemento della nostra pagina</li>
-<li>content: il contenuto vero e proprio, ad esempio il testo, l'immagine o altri elementi annidati</li>
-<li>padding: l'imballaggio, sta all'interno della nostra scatola, quindi coprirà anche l'eventuale colore o immagine di sfondo</li>
-<li>border: la confezione, ovvero il rettangolo che include padding e contenuto</li>
-<li>margin: il margine tra una scatola e l'altra</li>
-</ul>
-<p>Fate attenzione che i margini tra due elementi si sommano: quindi se un elemento ha margine destro pari a 10px, e il successivo ha margine sinistro pari a 15px, il margine totale sarà 25px.</p>
+<p>Il path base del database in questo caso è <a href="https://projectx-marconi.firebaseio.com/">https://projectx-marconi.firebaseio.com/</a>. Per scaricare una risorsa, dobbiamo aggiungere <code>.json</code> alla fine del path. Per esempio, se vogliamo scaricare tutto quanto il database, possiamo usare:</p>
+<p><a href="https://projectx-marconi.firebaseio.com/.json">https://projectx-marconi.firebaseio.com/.json</a></p>
+<p>Provando a cliccare su questo link con il browser, vedrete che scaricherete tutto il database in formato JSON. Questo perché quando clicchiamo su un link, il browser di default usa il metodo GET.</p>
+<p>Se vogliamo invece scaricare solo il contenuto, ad esempio, di <code>dronedetail</code>, dobbiamo usare:</p>
+<p><a href="https://projectx-marconi.firebaseio.com/dronedetail.json">https://projectx-marconi.firebaseio.com/dronedetail.json</a></p>
+<p>Come vedete cliccando sul link, in questo caso abbiamo ottenuto solo la porzione di db che ci interessa.</p>
+<a class="header" href="#modifica-della-risorsa" id="modifica-della-risorsa"><h2>Modifica della risorsa</h2></a>
+<p>Per modificare la risorsa, il ragionamento è simile. Troviamo il path della risorsa da modificare, ed usiamo <code>POST</code> e <code>PUT</code> in base al tipo di operazione che vogliamo eseguire.</p>
+<a class="header" href="#idempotenza" id="idempotenza"><h3>Idempotenza</h3></a>
+<p>Quale usiamo tra <code>POST</code> e <code>PUT</code>? Per rispondere, introduciamo brevemente il concetto di idempotenza. Un comando si chiama <em>idempotente</em> se &quot;<em>richieste ripetute identiche devono portare al medesimo stato dei dati sul server</em>&quot;. Per semplificare, pensate ad esempio ad una UPDATE in SQL. Se chiamate più volte UPDATE con gli stessi parametri, le chiamate successive alla prima non avranno effetto sulla riga da aggiornare. Pensate ora alla INSERT. Se chiamate più volte INSERT con gli stessi parametri (ipotizzando una assegnazione automatica della chiave primaria), ad ogni chiamata il database andrà ad aggiungere una nuova riga.</p>
+<p>La stessa cosa per le chiamate HTTP con NoSQL.</p>
+<p>PUT è idempotente: facendo più richieste HTTP PUT, il DB viene (eventualmente) modificato solo la prima volta.</p>
+<p>POST non è idempotente: facendo più richieste HTTP POST, ad ogni chiamata verrà aggiunta una nuova risorsa e creata una chiave primaria per noi.</p>
+<p>Approfondimento sul concetto di idempotenza <a href="http://blog.loris.tissino.it/2013/06/http-rest-e-api.html">qui</a>.</p>
+<a class="header" href="#esempio-quasi-completo" id="esempio-quasi-completo"><h2>Esempio (quasi) completo</h2></a>
+<p>Per avere un esempio pratico di quanto detto, rimando al progetto di classe dell'<a href="https://github.com/marconicivitavecchia-bar/bar-prof/blob/master/code/app.js">applicazione del bar</a>.</p>
+<p>In questo esempio, viene fatta una <code>GET</code> per scaricare tutto il database, ed una <code>PUT</code> per modificare la quantità richiesta di un certo prodotto.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../html5/01-walkthough.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../database/firebase.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../html5/02-walkthough.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../sustenability/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -231,13 +221,13 @@ L'HTML è fin da subito nato come uno standard aperto: questo all'inizio ha crea
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../html5/01-walkthough.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../database/firebase.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../html5/02-walkthough.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../sustenability/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

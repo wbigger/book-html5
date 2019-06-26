@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><a href="sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="database/crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -1037,6 +1037,11 @@ docker-compose up
 <p>Dopo che avrete fatto le vostre prove, ricordatevi di fermare l'istanza: infatti per il semplice fatto che è <em>running</em>, state consumando credito, indipendentemente dagli accessi.</p>
 <p>Per fermare l'istanza, andate sulla lista delle istanze, selezionate &quot;Actions&quot;, quindi su &quot;States&quot; selezionate &quot;Stop&quot; se volete fermarla e prevedete di riutilizzarla in seguito, o &quot;Terminate&quot; se volete completamente eliminarla.</p>
 <p>Precisazione: in generale, anche quando una istanza è <em>stopped</em>, continuate a consumare de credito per lo <em>storage</em> che state utilizzando. Ma nel nostro caso la quantità di storage utilizzata è minima e quindi anche questa componente del costo.</p>
+<style>
+.centered {
+	text-align: center;
+}
+</style>
 <a class="header" href="#nosql-database" id="nosql-database"><h1>NoSQL database</h1></a>
 <p>I database NoSQL sono un'alternativa ai database SQL particolarmente utilizzata per le applicazioni web.</p>
 <p>Caratteristiche:</p>
@@ -1056,11 +1061,15 @@ docker-compose up
 <ul>
 <li>la lettura dei campi deve essere molto difensiva perché non si hanno certezze sulla struttura dei dati ricevuti</li>
 </ul>
-<p>Link utili:</p>
+<a class="header" href="#video-di-confronto" id="video-di-confronto"><h2>Video di confronto</h2></a>
+<p>E' <strong>caldamente</strong> consigliato vedere questo video fino al minuto 9:45 per avere un chiaro confronto tra database SQL e NoSQL. Il video è in inglese con sottotitoli in inglese, ma è di facile comprensione.</p>
+<p class="centered">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v_hR4K4auoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a class="header" href="#link-utili" id="link-utili"><h2>Link utili</h2></a>
 <ul>
 <li><a href="https://it.wikipedia.org/wiki/Representational_State_Transfer">REST</a>, una filosofia di scrittura delle API per la quale al centro di tutto c'è la risorsa che viene manipolata attraverso vari metodi. Molto spesso associata all'HTTP. Con REST si possono effettuare le operazioni CRUD per un database, in <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">questo link</a> potete vedere una tabella di confronto tra NoSQL e SQL.</li>
 <li><a href="https://firebase.google.com/docs/database/rest/structure-data">Guida di Firebase</a> su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL</li>
-<li><a href="https://www.youtube.com/watch?v=v_hR4K4auoQ&amp;t=593s">Video di confronto</a> tra SQL e NoSQL.</li>
 <li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">Pagina di confronto</a> tra SQL e NoSQL.</li>
 </ul>
 <a class="header" href="#frameworks" id="frameworks"><h1>Frameworks</h1></a>
@@ -1071,6 +1080,80 @@ docker-compose up
 <li><a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)">React</a>, mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM</li>
 <li><a href="https://flutter.dev/">Flutter</a>, anche questo mantenuto da Google, è l'ultimo nato ma sta riscuotendo un enorme successo. Basato sul linguaggio Dart.</li>
 </ul>
+<a class="header" href="#firebase" id="firebase"><h1>Firebase</h1></a>
+<p>Per capire meglio come funzionano i database NoSQL, useremo Google Firebase.</p>
+<p>Google Firebase è estremamente semplice da usare e molto potente. Per usarlo basta avere un account Google con Clout Platform attivato.</p>
+<p>Andare sul sito di <a href="http://firebase.google.com/">Firebase</a>, quindi:</p>
+<ul>
+<li>accedere con il proprio account Google</li>
+<li>cliccare su &quot;Vai alla console&quot; in alto a destra</li>
+<li>cliccare su Add Project</li>
+<li>scegliere un nome per il database e lasciare tutto il resto di default, quindi premere su &quot;Create project&quot;</li>
+<li>nel progetto appena creato, andare nel menu a sinistra su &quot;Database&quot;.</li>
+</ul>
+<p>A questo punto dobbiamo fare una scelta. La versione del database consigliato oggi da Google è il nuovo Cloud Firestore, più potente ma richiede un minimo di pratica per cominciare. Noi possiamo usare la versione <strong>Real-time Database</strong>, che era la versione standard fino a poco tempo fa ma è comunque ancora supportata. Il vantaggio di quest'ultima versione è che è più immediata da usare.</p>
+<p>Configurazione completata :)</p>
+<style>
+.centered {
+	text-align: center;
+}
+img.right_side {
+  float: right;
+  margin:5px 5px 0px 20px;
+  width: 50%;
+}
+img.left_side {
+  float:left;
+  margin:5px 20px 0px 5px;
+  width: 20%;
+}
+
+p.clear {
+  clear: both;  
+}
+p.img-container {
+  margin-bottom: 15px;
+}
+
+p.img-container::after {
+  margin-bottom: 15px;
+  overflow: hidden;
+  clear: both;
+}
+</style>
+<a class="header" href="#operazioni-crud" id="operazioni-crud"><h1>Operazioni CRUD</h1></a>
+<p>Quando interagiamo con un qualsiasi database, sappiamo bene che esistono diverse categorie di comandi per interrogarlo e manipolarlo. In generale, i diversi comandi rientrano all'interno delle operazioni cosiddette <strong>CRUD</strong>: <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate e <strong>D</strong>elete.</p>
+<p>I database SQL e NoSQL usano strategie diverse per eseguire queste operazioni. Di seguito una tabella riassuntiva di confronto.</p>
+<table><thead><tr><th> Operazione  </th><th> SQL </th><th> NoSQL (HTTP) </th></tr></thead><tbody>
+<tr><td> Create </td><td>INSERT</td><td>POST (o PUT)</td></tr>
+<tr><td> Read  </td><td>SELECT</td><td>GET</td></tr>
+<tr><td> Update  </td><td>UPDATE</td><td>PUT / PATCH</td></tr>
+<tr><td> Delete  </td><td>DELETE</td><td>DELETE</td></tr>
+</tbody></table>
+<a class="header" href="#selezione-della-risorsa" id="selezione-della-risorsa"><h2>Selezione della risorsa</h2></a>
+<p>In NoSQL, per selezionare l'elemento che si vuole creare o modificare, bisogna identificare <strong>l'URL</strong> della risorsa.</p>
+<p>In generale, avremo un URL base che identifica il database, e un path relativo che identifica la risorsa all'interno del db.</p>
+<p>Facciamo un esempio con il database di Google Firebase che abbiamo creato.</p>
+<p align="center">
+<img title="google-firebase" alt="google-firebase" src="assets/firebase.png"></a>
+</p>
+<p>Il path base del database in questo caso è <a href="https://projectx-marconi.firebaseio.com/">https://projectx-marconi.firebaseio.com/</a>. Per scaricare una risorsa, dobbiamo aggiungere <code>.json</code> alla fine del path. Per esempio, se vogliamo scaricare tutto quanto il database, possiamo usare:</p>
+<p><a href="https://projectx-marconi.firebaseio.com/.json">https://projectx-marconi.firebaseio.com/.json</a></p>
+<p>Provando a cliccare su questo link con il browser, vedrete che scaricherete tutto il database in formato JSON. Questo perché quando clicchiamo su un link, il browser di default usa il metodo GET.</p>
+<p>Se vogliamo invece scaricare solo il contenuto, ad esempio, di <code>dronedetail</code>, dobbiamo usare:</p>
+<p><a href="https://projectx-marconi.firebaseio.com/dronedetail.json">https://projectx-marconi.firebaseio.com/dronedetail.json</a></p>
+<p>Come vedete cliccando sul link, in questo caso abbiamo ottenuto solo la porzione di db che ci interessa.</p>
+<a class="header" href="#modifica-della-risorsa" id="modifica-della-risorsa"><h2>Modifica della risorsa</h2></a>
+<p>Per modificare la risorsa, il ragionamento è simile. Troviamo il path della risorsa da modificare, ed usiamo <code>POST</code> e <code>PUT</code> in base al tipo di operazione che vogliamo eseguire.</p>
+<a class="header" href="#idempotenza" id="idempotenza"><h3>Idempotenza</h3></a>
+<p>Quale usiamo tra <code>POST</code> e <code>PUT</code>? Per rispondere, introduciamo brevemente il concetto di idempotenza. Un comando si chiama <em>idempotente</em> se &quot;<em>richieste ripetute identiche devono portare al medesimo stato dei dati sul server</em>&quot;. Per semplificare, pensate ad esempio ad una UPDATE in SQL. Se chiamate più volte UPDATE con gli stessi parametri, le chiamate successive alla prima non avranno effetto sulla riga da aggiornare. Pensate ora alla INSERT. Se chiamate più volte INSERT con gli stessi parametri (ipotizzando una assegnazione automatica della chiave primaria), ad ogni chiamata il database andrà ad aggiungere una nuova riga.</p>
+<p>La stessa cosa per le chiamate HTTP con NoSQL.</p>
+<p>PUT è idempotente: facendo più richieste HTTP PUT, il DB viene (eventualmente) modificato solo la prima volta.</p>
+<p>POST non è idempotente: facendo più richieste HTTP POST, ad ogni chiamata verrà aggiunta una nuova risorsa e creata una chiave primaria per noi.</p>
+<p>Approfondimento sul concetto di idempotenza <a href="http://blog.loris.tissino.it/2013/06/http-rest-e-api.html">qui</a>.</p>
+<a class="header" href="#esempio-quasi-completo" id="esempio-quasi-completo"><h2>Esempio (quasi) completo</h2></a>
+<p>Per avere un esempio pratico di quanto detto, rimando al progetto di classe dell'<a href="https://github.com/marconicivitavecchia-bar/bar-prof/blob/master/code/app.js">applicazione del bar</a>.</p>
+<p>In questo esempio, viene fatta una <code>GET</code> per scaricare tutto il database, ed una <code>PUT</code> per modificare la quantità richiesta di un certo prodotto.</p>
 <style>
 .centered {
 	text-align: center;
@@ -1146,7 +1229,7 @@ Your browser does not support the audio element.
 <p>L'executive summary all'inizio del report riassume tutti i punti più importanti. La buona notizia è che le aziende legate ad Internet sono le tra le più virtuose dal punto di vista delle fonti rinnovabili, e stanno facendo da traino anche per le altre società. Purtroppo però le aziende basate in Cina, come noto, si basano fortemente su fonti di energia non rinnovabili; considerando che sono anche le aziende in maggior crescita, questo crea un problema globale di notevoli dimensioni che ci coinvolge tutti. È altrettanto vero però che la Cina è il paese che investe di più al mondo sull'energia rinnovabile, e quindi anche in questo campo sta innovando molto, a differenza degli Stati Uniti rimangono praticamente fermi...</p>
 <a class="header" href="#conclusioni" id="conclusioni"><h2>Conclusioni</h2></a>
 <p>Insomma lo scenario sulla sostenibilità è in continuo e rapido movimento, e bisogna rivedere continuamente le nostre &quot;certezze&quot; o credenze, lasciando da parte i luoghi comuni. Consiglio a tutti gli studenti di cercare di farsi delle conoscenze di prima mano, andando in giro per il mondo come viaggiatori e non come turisti e conoscendo persone di vari paesi...Buon viaggio, mandatemi una cartolina!</p>
-<a class="header" href="#link-utili" id="link-utili"><h2>Link utili</h2></a>
+<a class="header" href="#link-utili-1" id="link-utili-1"><h2>Link utili</h2></a>
 <ul>
 <li><a href="http://www.minambiente.it/pagina/gli-obiettivi-e-i-target">Ministero dell'ambiente italiano</a></li>
 <li><a href="https://www.bancaditalia.it">Banca d'Italia</a></li>

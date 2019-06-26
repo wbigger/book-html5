@@ -1,3 +1,9 @@
+<style>
+.centered {
+	text-align: center;
+}
+</style>
+
 # NoSQL database
 
 I database NoSQL sono un'alternativa ai database SQL particolarmente utilizzata per le applicazioni web.
@@ -16,10 +22,16 @@ Vantaggi:
 Svantaggi:
 - la lettura dei campi deve essere molto difensiva perché non si hanno certezze sulla struttura dei dati ricevuti
 
-Link utili:
+## Video di confronto
+E' **caldamente** consigliato vedere questo video fino al minuto 9:45 per avere un chiaro confronto tra database SQL e NoSQL. Il video è in inglese con sottotitoli in inglese, ma è di facile comprensione.
+
+<p class="centered">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v_hR4K4auoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+## Link utili
 - [REST](https://it.wikipedia.org/wiki/Representational_State_Transfer), una filosofia di scrittura delle API per la quale al centro di tutto c'è la risorsa che viene manipolata attraverso vari metodi. Molto spesso associata all'HTTP. Con REST si possono effettuare le operazioni CRUD per un database, in [questo link](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) potete vedere una tabella di confronto tra NoSQL e SQL.
 - [Guida di Firebase](https://firebase.google.com/docs/database/rest/structure-data) su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL
-- [Video di confronto](https://www.youtube.com/watch?v=v_hR4K4auoQ&t=593s) tra SQL e NoSQL.
 - [Pagina di confronto](https://www.sitepoint.com/sql-vs-nosql-differences/) tra SQL e NoSQL.
 
 # Frameworks

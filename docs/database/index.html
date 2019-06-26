@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html" class="active"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html" class="active"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,7 +136,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#nosql-database" id="nosql-database"><h1>NoSQL database</h1></a>
+                        <style>
+.centered {
+	text-align: center;
+}
+</style>
+<a class="header" href="#nosql-database" id="nosql-database"><h1>NoSQL database</h1></a>
 <p>I database NoSQL sono un'alternativa ai database SQL particolarmente utilizzata per le applicazioni web.</p>
 <p>Caratteristiche:</p>
 <ul>
@@ -155,11 +160,15 @@
 <ul>
 <li>la lettura dei campi deve essere molto difensiva perché non si hanno certezze sulla struttura dei dati ricevuti</li>
 </ul>
-<p>Link utili:</p>
+<a class="header" href="#video-di-confronto" id="video-di-confronto"><h2>Video di confronto</h2></a>
+<p>E' <strong>caldamente</strong> consigliato vedere questo video fino al minuto 9:45 per avere un chiaro confronto tra database SQL e NoSQL. Il video è in inglese con sottotitoli in inglese, ma è di facile comprensione.</p>
+<p class="centered">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v_hR4K4auoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a class="header" href="#link-utili" id="link-utili"><h2>Link utili</h2></a>
 <ul>
 <li><a href="https://it.wikipedia.org/wiki/Representational_State_Transfer">REST</a>, una filosofia di scrittura delle API per la quale al centro di tutto c'è la risorsa che viene manipolata attraverso vari metodi. Molto spesso associata all'HTTP. Con REST si possono effettuare le operazioni CRUD per un database, in <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">questo link</a> potete vedere una tabella di confronto tra NoSQL e SQL.</li>
 <li><a href="https://firebase.google.com/docs/database/rest/structure-data">Guida di Firebase</a> su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL</li>
-<li><a href="https://www.youtube.com/watch?v=v_hR4K4auoQ&amp;t=593s">Video di confronto</a> tra SQL e NoSQL.</li>
 <li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">Pagina di confronto</a> tra SQL e NoSQL.</li>
 </ul>
 <a class="header" href="#frameworks" id="frameworks"><h1>Frameworks</h1></a>
@@ -182,7 +191,7 @@
                         
 
                         
-                            <a rel="next" href="../sustenability/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../database/firebase.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -200,7 +209,7 @@
                 
 
                 
-                    <a href="../sustenability/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../database/firebase.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
