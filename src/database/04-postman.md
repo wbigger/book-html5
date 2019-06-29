@@ -22,7 +22,7 @@ Immaginiamo ora di voler modificare il valore della batteria, e portarlo al 70%.
 
 Creiamo una nuova request premendo il "+" nella barra in alto di Postman, quindi:
 - seleziamo il metodo PUT
-- inseriamo nel campo URL il link alla risorsa di nostro interesse, nel nostro caso [https://projectx-marconi.firebaseio.com/dronedetail/battery.json](https://projectx-marconi.firebaseio.com/dronedetail/battery.json)
+- inseriamo nel campo URL il link alla risorsa di nostro interesse, nel nostro caso [https://projectx-marconi.firebaseio.com/dronedetail/batteria.json](https://projectx-marconi.firebaseio.com/dronedetail/batteria.json)
 - subito sotto l'URL, selezionamo "Body", quindi "raw" e cambiamo il formato da "text" a "json"
 - inseriamo il nuovo valore in formato JSON, in questo caso `"70%"` (compresi i doppi apici)
 - premiamo SEND
