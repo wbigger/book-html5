@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>NoSQL database - TPSI - HTML5</title>
+        <title>Firebase - TPSI - HTML5</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html" class="active"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/01-README.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/02-firebase.html" class="active"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/03-crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li><li><a href="../database/04-postman.html"><strong aria-hidden="true">4.3.</strong> Postman</a></li><li><a href="../database/05-example.html"><strong aria-hidden="true">4.4.</strong> Esempio</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,62 +136,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <style>
-.centered {
-	text-align: center;
-}
-</style>
-<a class="header" href="#nosql-database" id="nosql-database"><h1>NoSQL database</h1></a>
-<p>I database NoSQL sono un'alternativa ai database SQL particolarmente utilizzata per le applicazioni web.</p>
-<p>Caratteristiche:</p>
+                        <a class="header" href="#firebase" id="firebase"><h1>Firebase</h1></a>
+<p>Per capire meglio come funzionano i database NoSQL, useremo Google Firebase.</p>
+<p>Google Firebase è estremamente semplice da usare e molto potente. Per usarlo basta avere un account Google con Clout Platform attivato.</p>
+<p>Andare sul sito di <a href="http://firebase.google.com/">Firebase</a>, quindi:</p>
 <ul>
-<li>non hanno uno schema che definisce la struttura del database</li>
-<li>alcuni dati sono ripetuti in diverse parti del database per migliorare le performance di lettura (a scapito di quelle di scrittura e spazio utilizzato)</li>
-<li>hanno una struttura ad albero e non a tabelle</li>
-<li>non esistono chiavi primarie esplicite, ma solo per convenzione dello sviluppatore</li>
-<li>non si interrogano con SQL, ma con altri metodi, tipicamente Restful (vedi dopo)</li>
+<li>accedere con il proprio account Google</li>
+<li>cliccare su &quot;Vai alla console&quot; in alto a destra</li>
+<li>cliccare su Add Project</li>
+<li>scegliere un nome per il database e lasciare tutto il resto di default, quindi premere su &quot;Create project&quot;</li>
+<li>nel progetto appena creato, andare nel menu a sinistra su &quot;Database&quot;.</li>
 </ul>
-<p>Vantaggi:</p>
-<ul>
-<li>più semplice modificare i campi dei database, utile se i requisiti cambiano continuamente</li>
-<li>può scalare orizzontalmente, ovvero può essere distribuito facilmente su più computer</li>
-</ul>
-<p>Svantaggi:</p>
-<ul>
-<li>la lettura dei campi deve essere molto difensiva perché non si hanno certezze sulla struttura dei dati ricevuti</li>
-</ul>
-<a class="header" href="#video-di-confronto" id="video-di-confronto"><h2>Video di confronto</h2></a>
-<p>E' <strong>caldamente</strong> consigliato vedere questo video fino al minuto 9:45 per avere un chiaro confronto tra database SQL e NoSQL. Il video è in inglese con sottotitoli in inglese, ma è di facile comprensione.</p>
-<p class="centered">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v_hR4K4auoQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-<a class="header" href="#link-utili" id="link-utili"><h2>Link utili</h2></a>
-<ul>
-<li><a href="https://it.wikipedia.org/wiki/Representational_State_Transfer">REST</a>, una filosofia di scrittura delle API per la quale al centro di tutto c'è la risorsa che viene manipolata attraverso vari metodi. Molto spesso associata all'HTTP. Con REST si possono effettuare le operazioni CRUD per un database, in <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">questo link</a> potete vedere una tabella di confronto tra NoSQL e SQL.</li>
-<li><a href="https://firebase.google.com/docs/database/rest/structure-data">Guida di Firebase</a> su come strutturare i dati, rende molto bene operativamente cosa significa programmare per un database NoSQL</li>
-<li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">Pagina di confronto</a> tra SQL e NoSQL.</li>
-</ul>
-<a class="header" href="#frameworks" id="frameworks"><h1>Frameworks</h1></a>
-<p>Quando si vogliono gestire funzionalità complesse come sincronizzazione dello stato locale della pagina con il database remoto, lavoro offline, etc., può essere molto utile usare un <em>framework</em> che permetta di gestire queste cose in modo più semplice.</p>
-<p>Attualmente (giugno 2019) tra i framework più usati ci sono:</p>
-<ul>
-<li><a href="https://angular.io/">Angular</a>, mantenuto da Google, usa TypeScript</li>
-<li><a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)">React</a>, mantenuto da Facebook (per l'esattezza è una libreria) e utilizza i concetti di stateful, properties e Virtual DOM</li>
-<li><a href="https://flutter.dev/">Flutter</a>, anche questo mantenuto da Google, è l'ultimo nato ma sta riscuotendo un enorme successo. Basato sul linguaggio Dart.</li>
-</ul>
+<p>A questo punto dobbiamo fare una scelta. La versione del database consigliato oggi da Google è il nuovo Cloud Firestore, più potente ma richiede un minimo di pratica per cominciare. Noi possiamo usare la versione <strong>Real-time Database</strong>, che era la versione standard fino a poco tempo fa ma è comunque ancora supportata. Il vantaggio di quest'ultima versione è che è più immediata da usare.</p>
+<p>Quando viene richiesto, selezionare le regole di test per l'accesso al database, in modo tale che in questo momento possiamo non preoccuparci dell'autenticazione dell'utente per le operazioni di lettura o scrittura.</p>
+<p>Configurazione completata :)</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../deploy/cloud.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../database/01-README.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../database/firebase.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../database/03-crud.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -203,13 +174,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../deploy/cloud.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../database/01-README.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../database/firebase.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../database/03-crud.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

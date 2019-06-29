@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CRUD - TPSI - HTML5</title>
+        <title>Postman - TPSI - HTML5</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/crud.html" class="active"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="../html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="../html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="../html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="../html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="../html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="../html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="../html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="../deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="../deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="../database/01-README.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="../database/02-firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="../database/03-crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li><li><a href="../database/04-postman.html" class="active"><strong aria-hidden="true">4.3.</strong> Postman</a></li><li><a href="../database/05-example.html"><strong aria-hidden="true">4.4.</strong> Esempio</a></li></ol></li><li><a href="../sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,80 +136,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <style>
-.centered {
-	text-align: center;
-}
-img.right_side {
-  float: right;
-  margin:5px 5px 0px 20px;
-  width: 50%;
-}
-img.left_side {
-  float:left;
-  margin:5px 20px 0px 5px;
-  width: 20%;
-}
-
-p.clear {
-  clear: both;  
-}
-p.img-container {
-  margin-bottom: 15px;
-}
-
-p.img-container::after {
-  margin-bottom: 15px;
-  overflow: hidden;
-  clear: both;
-}
-</style>
-<a class="header" href="#operazioni-crud" id="operazioni-crud"><h1>Operazioni CRUD</h1></a>
-<p>Quando interagiamo con un qualsiasi database, sappiamo bene che esistono diverse categorie di comandi per interrogarlo e manipolarlo. In generale, i diversi comandi rientrano all'interno delle operazioni cosiddette <strong>CRUD</strong>: <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate e <strong>D</strong>elete.</p>
-<p>I database SQL e NoSQL usano strategie diverse per eseguire queste operazioni. Di seguito una tabella riassuntiva di confronto.</p>
-<table><thead><tr><th> Operazione  </th><th> SQL </th><th> NoSQL (HTTP) </th></tr></thead><tbody>
-<tr><td> Create </td><td>INSERT</td><td>POST (o PUT)</td></tr>
-<tr><td> Read  </td><td>SELECT</td><td>GET</td></tr>
-<tr><td> Update  </td><td>UPDATE</td><td>PUT / PATCH</td></tr>
-<tr><td> Delete  </td><td>DELETE</td><td>DELETE</td></tr>
-</tbody></table>
-<a class="header" href="#selezione-della-risorsa" id="selezione-della-risorsa"><h2>Selezione della risorsa</h2></a>
-<p>In NoSQL, per selezionare l'elemento che si vuole creare o modificare, bisogna identificare <strong>l'URL</strong> della risorsa.</p>
-<p>In generale, avremo un URL base che identifica il database, e un path relativo che identifica la risorsa all'interno del db.</p>
-<p>Facciamo un esempio con il database di Google Firebase che abbiamo creato.</p>
+                        <a class="header" href="#postman" id="postman"><h1>Postman</h1></a>
+<p>Provare una chiamata HTTP con il metodo GET è facile: basta scrivere l'indirizzo sulla barra di un browser. Provare gli altri metodi è più complesso, e può involvere la scrittura di un programma di test in qualche linguaggio, ad esempio JavaScript. Il problema di questo approccio è che fare il test di tante richieste diverse diventa complicato, e si perde più tempo a scrivere e modificare lo script che a fare i test.</p>
+<p>Per risolvere questo problema, esistono delle suite di test specifiche per le chiamate HTTP. Una delle applicazioni più usate al momento è <a href="https://www.getpostman.com/">Postman</a>.</p>
+<p>La prima volta che lanciamo l'applicazione ci viene chiesto di registrarci, ma possiamo saltare questo passaggio premendo su &quot;skip&quot; in basso.</p>
+<p>Una volta aperta l'applicazione, creiamo una nuova collezione dando un nome a piacere, ad esempio &quot;Book HTML5&quot;</p>
+<a class="header" href="#get" id="get"><h2>GET</h2></a>
+<p>All'interno della collezione appena creata, aggiungiamo una &quot;Request&quot; che possiamo chiamare ad esempio &quot;Get drone details&quot;. Mettiamo nel campo URL il link alla risorsa, nel nostro caso <a href="https://projectx-marconi.firebaseio.com/dronedetail.json">https://projectx-marconi.firebaseio.com/dronedetail.json</a>, e premiamo Send.</p>
 <p align="center">
-<img title="google-firebase" alt="google-firebase" src="assets/firebase.png"></a>
+<img title="postman-GET" alt="postman-GET" src="assets/postman-get.png"></a>
 </p>
-<p>Il path base del database in questo caso è <a href="https://projectx-marconi.firebaseio.com/">https://projectx-marconi.firebaseio.com/</a>. Per scaricare una risorsa, dobbiamo aggiungere <code>.json</code> alla fine del path. Per esempio, se vogliamo scaricare tutto quanto il database, possiamo usare:</p>
-<p><a href="https://projectx-marconi.firebaseio.com/.json">https://projectx-marconi.firebaseio.com/.json</a></p>
-<p>Provando a cliccare su questo link con il browser, vedrete che scaricherete tutto il database in formato JSON. Questo perché quando clicchiamo su un link, il browser di default usa il metodo GET.</p>
-<p>Se vogliamo invece scaricare solo il contenuto, ad esempio, di <code>dronedetail</code>, dobbiamo usare:</p>
-<p><a href="https://projectx-marconi.firebaseio.com/dronedetail.json">https://projectx-marconi.firebaseio.com/dronedetail.json</a></p>
-<p>Come vedete cliccando sul link, in questo caso abbiamo ottenuto solo la porzione di db che ci interessa.</p>
-<a class="header" href="#modifica-della-risorsa" id="modifica-della-risorsa"><h2>Modifica della risorsa</h2></a>
-<p>Per modificare la risorsa, il ragionamento è simile. Troviamo il path della risorsa da modificare, ed usiamo <code>POST</code> e <code>PUT</code> in base al tipo di operazione che vogliamo eseguire.</p>
-<a class="header" href="#idempotenza" id="idempotenza"><h3>Idempotenza</h3></a>
-<p>Quale usiamo tra <code>POST</code> e <code>PUT</code>? Per rispondere, introduciamo brevemente il concetto di idempotenza. Un comando si chiama <em>idempotente</em> se &quot;<em>richieste ripetute identiche devono portare al medesimo stato dei dati sul server</em>&quot;. Per semplificare, pensate ad esempio ad una UPDATE in SQL. Se chiamate più volte UPDATE con gli stessi parametri, le chiamate successive alla prima non avranno effetto sulla riga da aggiornare. Pensate ora alla INSERT. Se chiamate più volte INSERT con gli stessi parametri (ipotizzando una assegnazione automatica della chiave primaria), ad ogni chiamata il database andrà ad aggiungere una nuova riga.</p>
-<p>La stessa cosa per le chiamate HTTP con NoSQL.</p>
-<p>PUT è idempotente: facendo più richieste HTTP PUT, il DB viene (eventualmente) modificato solo la prima volta.</p>
-<p>POST non è idempotente: facendo più richieste HTTP POST, ad ogni chiamata verrà aggiunta una nuova risorsa e creata una chiave primaria per noi.</p>
-<p>Approfondimento sul concetto di idempotenza <a href="http://blog.loris.tissino.it/2013/06/http-rest-e-api.html">qui</a>.</p>
-<a class="header" href="#esempio-quasi-completo" id="esempio-quasi-completo"><h2>Esempio (quasi) completo</h2></a>
-<p>Per avere un esempio pratico di quanto detto, rimando al progetto di classe dell'<a href="https://github.com/marconicivitavecchia-bar/bar-prof/blob/master/code/app.js">applicazione del bar</a>.</p>
-<p>In questo esempio, viene fatta una <code>GET</code> per scaricare tutto il database, ed una <code>PUT</code> per modificare la quantità richiesta di un certo prodotto.</p>
+<p>Nella parte in basso ci sono i dati relativi alla riposta del server, in cui possiamo leggere il JSON restituito dal database.</p>
+<a class="header" href="#put" id="put"><h2>PUT</h2></a>
+<p>Immaginiamo ora di voler modificare il valore della batteria, e portarlo al 70%.</p>
+<p>Creiamo una nuova request premendo il &quot;+&quot; nella barra in alto di Postman, quindi:</p>
+<ul>
+<li>seleziamo il metodo PUT</li>
+<li>inseriamo nel campo URL il link alla risorsa di nostro interesse, nel nostro caso <a href="https://projectx-marconi.firebaseio.com/dronedetail/battery.json">https://projectx-marconi.firebaseio.com/dronedetail/battery.json</a></li>
+<li>subito sotto l'URL, selezionamo &quot;Body&quot;, quindi &quot;raw&quot; e cambiamo il formato da &quot;text&quot; a &quot;json&quot;</li>
+<li>inseriamo il nuovo valore in formato JSON, in questo caso <code>&quot;70%&quot;</code> (compresi i doppi apici)</li>
+<li>premiamo SEND</li>
+</ul>
+<p align="center">
+<img title="postman-PUT" alt="postman-PUT" src="assets/postman-put.png"></a>
+</p>
+<p>Nel body della response in basso vedremo lo stesso valore che abbiamo inserito, che corrisponde al nuovo valore nel database. In pratica ci da conferma che l'operazione è andata a buon fine.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../database/firebase.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../database/03-crud.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../sustenability/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../database/05-example.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -221,13 +185,13 @@ p.img-container::after {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../database/firebase.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../database/03-crud.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../sustenability/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../database/05-example.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

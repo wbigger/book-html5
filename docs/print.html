@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="database/index.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="database/firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="database/crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li></ol></li><li><a href="sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li><a href="html5/index.html"><strong aria-hidden="true">2.</strong> HTML5 Walkthrough</a></li><li><ol class="section"><li><a href="html5/01-html.html"><strong aria-hidden="true">2.1.</strong> HTML</a></li><li><ol class="section"><li><a href="html5/01-walkthough.html"><strong aria-hidden="true">2.1.1.</strong> creiamo la struttura</a></li></ol></li><li><a href="html5/02-css.html"><strong aria-hidden="true">2.2.</strong> CSS</a></li><li><ol class="section"><li><a href="html5/02-walkthough.html"><strong aria-hidden="true">2.2.1.</strong> aggiungiamo lo stile</a></li></ol></li><li><a href="html5/03-js.html"><strong aria-hidden="true">2.3.</strong> JS</a></li><li><ol class="section"><li><a href="html5/03-walkthough.html"><strong aria-hidden="true">2.3.1.</strong> rendiamo la pagina dinamica</a></li></ol></li></ol></li><li><a href="deploy/index.html"><strong aria-hidden="true">3.</strong> Deploy</a></li><li><ol class="section"><li><a href="deploy/cloud.html"><strong aria-hidden="true">3.1.</strong> Cloud</a></li></ol></li><li><a href="database/01-README.html"><strong aria-hidden="true">4.</strong> NoSQL database</a></li><li><ol class="section"><li><a href="database/02-firebase.html"><strong aria-hidden="true">4.1.</strong> Firebase</a></li><li><a href="database/03-crud.html"><strong aria-hidden="true">4.2.</strong> CRUD</a></li><li><a href="database/04-postman.html"><strong aria-hidden="true">4.3.</strong> Postman</a></li><li><a href="database/05-example.html"><strong aria-hidden="true">4.4.</strong> Esempio</a></li></ol></li><li><a href="sustenability/index.html"><strong aria-hidden="true">5.</strong> Sostenibilità</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -1092,6 +1092,7 @@ docker-compose up
 <li>nel progetto appena creato, andare nel menu a sinistra su &quot;Database&quot;.</li>
 </ul>
 <p>A questo punto dobbiamo fare una scelta. La versione del database consigliato oggi da Google è il nuovo Cloud Firestore, più potente ma richiede un minimo di pratica per cominciare. Noi possiamo usare la versione <strong>Real-time Database</strong>, che era la versione standard fino a poco tempo fa ma è comunque ancora supportata. Il vantaggio di quest'ultima versione è che è più immediata da usare.</p>
+<p>Quando viene richiesto, selezionare le regole di test per l'accesso al database, in modo tale che in questo momento possiamo non preoccuparci dell'autenticazione dell'utente per le operazioni di lettura o scrittura.</p>
 <p>Configurazione completata :)</p>
 <style>
 .centered {
@@ -1151,6 +1152,31 @@ p.img-container::after {
 <p>PUT è idempotente: facendo più richieste HTTP PUT, il DB viene (eventualmente) modificato solo la prima volta.</p>
 <p>POST non è idempotente: facendo più richieste HTTP POST, ad ogni chiamata verrà aggiunta una nuova risorsa e creata una chiave primaria per noi.</p>
 <p>Approfondimento sul concetto di idempotenza <a href="http://blog.loris.tissino.it/2013/06/http-rest-e-api.html">qui</a>.</p>
+<a class="header" href="#postman" id="postman"><h1>Postman</h1></a>
+<p>Provare una chiamata HTTP con il metodo GET è facile: basta scrivere l'indirizzo sulla barra di un browser. Provare gli altri metodi è più complesso, e può involvere la scrittura di un programma di test in qualche linguaggio, ad esempio JavaScript. Il problema di questo approccio è che fare il test di tante richieste diverse diventa complicato, e si perde più tempo a scrivere e modificare lo script che a fare i test.</p>
+<p>Per risolvere questo problema, esistono delle suite di test specifiche per le chiamate HTTP. Una delle applicazioni più usate al momento è <a href="https://www.getpostman.com/">Postman</a>.</p>
+<p>La prima volta che lanciamo l'applicazione ci viene chiesto di registrarci, ma possiamo saltare questo passaggio premendo su &quot;skip&quot; in basso.</p>
+<p>Una volta aperta l'applicazione, creiamo una nuova collezione dando un nome a piacere, ad esempio &quot;Book HTML5&quot;</p>
+<a class="header" href="#get" id="get"><h2>GET</h2></a>
+<p>All'interno della collezione appena creata, aggiungiamo una &quot;Request&quot; che possiamo chiamare ad esempio &quot;Get drone details&quot;. Mettiamo nel campo URL il link alla risorsa, nel nostro caso <a href="https://projectx-marconi.firebaseio.com/dronedetail.json">https://projectx-marconi.firebaseio.com/dronedetail.json</a>, e premiamo Send.</p>
+<p align="center">
+<img title="postman-GET" alt="postman-GET" src="assets/postman-get.png"></a>
+</p>
+<p>Nella parte in basso ci sono i dati relativi alla riposta del server, in cui possiamo leggere il JSON restituito dal database.</p>
+<a class="header" href="#put" id="put"><h2>PUT</h2></a>
+<p>Immaginiamo ora di voler modificare il valore della batteria, e portarlo al 70%.</p>
+<p>Creiamo una nuova request premendo il &quot;+&quot; nella barra in alto di Postman, quindi:</p>
+<ul>
+<li>seleziamo il metodo PUT</li>
+<li>inseriamo nel campo URL il link alla risorsa di nostro interesse, nel nostro caso <a href="https://projectx-marconi.firebaseio.com/dronedetail/battery.json">https://projectx-marconi.firebaseio.com/dronedetail/battery.json</a></li>
+<li>subito sotto l'URL, selezionamo &quot;Body&quot;, quindi &quot;raw&quot; e cambiamo il formato da &quot;text&quot; a &quot;json&quot;</li>
+<li>inseriamo il nuovo valore in formato JSON, in questo caso <code>&quot;70%&quot;</code> (compresi i doppi apici)</li>
+<li>premiamo SEND</li>
+</ul>
+<p align="center">
+<img title="postman-PUT" alt="postman-PUT" src="assets/postman-put.png"></a>
+</p>
+<p>Nel body della response in basso vedremo lo stesso valore che abbiamo inserito, che corrisponde al nuovo valore nel database. In pratica ci da conferma che l'operazione è andata a buon fine.</p>
 <a class="header" href="#esempio-quasi-completo" id="esempio-quasi-completo"><h2>Esempio (quasi) completo</h2></a>
 <p>Per avere un esempio pratico di quanto detto, rimando al progetto di classe dell'<a href="https://github.com/marconicivitavecchia-bar/bar-prof/blob/master/code/app.js">applicazione del bar</a>.</p>
 <p>In questo esempio, viene fatta una <code>GET</code> per scaricare tutto il database, ed una <code>PUT</code> per modificare la quantità richiesta di un certo prodotto.</p>
