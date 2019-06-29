@@ -76,8 +76,3 @@ PUT è idempotente: facendo più richieste HTTP PUT, il DB viene (eventualmente)
 POST non è idempotente: facendo più richieste HTTP POST, ad ogni chiamata verrà aggiunta una nuova risorsa e creata una chiave primaria per noi.
 
 Approfondimento sul concetto di idempotenza [qui]( http://blog.loris.tissino.it/2013/06/http-rest-e-api.html).
-
-## Esempio (quasi) completo
-Per avere un esempio pratico di quanto detto, rimando al progetto di classe dell'[applicazione del bar](https://github.com/marconicivitavecchia-bar/bar-prof/blob/master/code/app.js).
-
-In questo esempio, viene fatta una `GET` per scaricare tutto il database, ed una `PUT` per modificare la quantità richiesta di un certo prodotto.

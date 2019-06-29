@@ -13,4 +13,6 @@ Andare sul sito di [Firebase](http://firebase.google.com/), quindi:
 
 A questo punto dobbiamo fare una scelta. La versione del database consigliato oggi da Google è il nuovo Cloud Firestore, più potente ma richiede un minimo di pratica per cominciare. Noi possiamo usare la versione **Real-time Database**, che era la versione standard fino a poco tempo fa ma è comunque ancora supportata. Il vantaggio di quest'ultima versione è che è più immediata da usare.
 
+Quando viene richiesto, selezionare le regole di test per l'accesso al database, in modo tale che in questo momento possiamo non preoccuparci dell'autenticazione dell'utente per le operazioni di lettura o scrittura.
+
 Configurazione completata :)
